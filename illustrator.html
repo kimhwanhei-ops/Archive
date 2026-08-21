@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Illustrator Works | Kim Hwanhee</title>
+    <title>Illustrator Works</title>
 
     <link rel="stylesheet" href="css/illustrator.css" />
   </head>
 
   <body>
-    <!-- header -->
+    <!-- ========================================
+         HEADER
+    ========================================= -->
 
     <header>
       <h1>
@@ -22,81 +24,90 @@
         <li><a href="photoshop.html">PHOTOSHOP</a></li>
         <li><a href="illustrator.html">ILLUSTRATOR</a></li>
         <li><a href="works.html">HTML/CSS</a></li>
-        <li><a href="index.html">BACK TO MUSIC</a></li>
+        <li><a href="index.html">BACK</a></li>
       </ul>
     </header>
 
-    <!-- visual -->
+    <!-- ========================================
+         VISUAL
+    ========================================= -->
 
-    <div class="visual">
-      <p class="archive">ADOBE ILLUSTRATOR · PRACTICE ARCHIVE</p>
+    <section class="visual">
+      <div class="visual-wrap">
+        <p>ADOBE ILLUSTRATOR · PRACTICE ARCHIVE</p>
 
-      <h2>
-        ILLUSTRATOR<br />
-        WORKS
-      </h2>
+        <h2>
+          ILLUSTRATOR<br />
+          WORKS
+        </h2>
 
-      <div class="line"></div>
+        <div class="line"></div>
 
-      <p class="visual-text">
-        Illustrator 수업과 실습을 통해 제작한 작업물을 기록한 공간입니다.
-      </p>
+        <p class="description">
+          Illustrator 수업과 실습을 통해 제작한 작업물을 기록한 공간입니다.
+        </p>
 
-      <p class="owner">KIM HWANHEE · 김환희 · 2026</p>
-    </div>
+        <p class="name">KIM HWAN HEE · 김환희 · 2026</p>
+      </div>
+    </section>
 
-    <!-- projects -->
+    <!-- ========================================
+         PROJECTS
+    ========================================= -->
 
-    <div id="projects">
-      <div class="projects-title">
+    <main>
+      <div class="project-title">
         <h2>PROJECTS</h2>
 
-        <div class="projects-info">
-          <p>ADOBE ILLUSTRATOR</p>
-          <p>DESIGN PRACTICE ARCHIVE</p>
-        </div>
+        <p>
+          ADOBE ILLUSTRATOR<br />
+          DESIGN PRACTICE ARCHIVE
+        </p>
       </div>
 
-      <ul class="project-list">
-        <li>
-          <a href="#">
-            <div class="thumb">
-              <img
-                src="img/illustrator/기프티콘.gif"
-                alt="Illustrator 작업물"
-              />
-            </div>
+      <div class="project-list">
+        <!-- 01 -->
 
-            <div class="project-text">
-              <p class="num">01</p>
-              <h3>ILLUSTRATOR WORK</h3>
-              <p class="type">ILLUSTRATOR · GRAPHIC DESIGN</p>
-              <p class="view">VIEW WORK →</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
+        <a
+          href="img/illustrator/illustrator01.jpg"
+          class="project-card"
+          target="_blank"
+        >
+          <div class="project-img">
+            <img src="img/illustrator/기프티콘.gif" alt="Illustrator 작업" />
+          </div>
 
-    <!-- footer -->
+          <div class="project-text">
+            <p class="number">01</p>
+
+            <h3>ILLUSTRATION WORK</h3>
+
+            <p class="type">ILLUSTRATOR · VECTOR DESIGN</p>
+
+            <span>VIEW WORK →</span>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
 
     <footer>
-      <div class="footer-inner">
-        <div class="footer-left">
-          <h2>ILLUSTRATOR</h2>
-          <p>DESIGN PRACTICE ARCHIVE</p>
-        </div>
+      <p>© 2026 KIM HWAN HEE PORTFOLIO</p>
 
-        <div class="footer-center">
-          <p class="name">KIM HWANHEE · 김환희</p>
-          <p>010-****-9297</p>
-          <p>SEOUL · KOREA</p>
-        </div>
-
-        <div class="footer-right">
-          <a href="index.html">BACK TO MUSIC ↑</a>
-        </div>
-      </div>
+      <ul>
+        <li><a href="photoshop.html">PHOTOSHOP</a></li>
+        <li><a href="illustrator.html">ILLUSTRATOR</a></li>
+        <li><a href="works.html">HTML/CSS</a></li>
+      </ul>
     </footer>
+
+    <!-- ========================================
+         MAIN PORTFOLIO BACK
+    ========================================= -->
+
+    <a class="back-home" href="index.html"> ← BACK </a>
   </body>
 </html>

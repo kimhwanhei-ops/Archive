@@ -81,7 +81,8 @@ header li a:hover {
 }
 #visual h2 span {
   padding: 10px 15px;
-
+  background-color: #000;
+  /* opacity: 80%; */
   background-color: rgba(0, 0, 0, 0.7);
 
   font-weight: bold;
@@ -203,20 +204,19 @@ header li a:hover {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-#con03 .send {
-  width: 130px;
-  margin-top: 25px;
+
+#con03 button {
   background-color: #000;
-  text-align: center;
-}
-#con03 .send a {
-  display: block;
-  padding: 10px 5px;
+  border: none;
+
+  padding: 10px 20px;
   color: #fff;
   font-size: 12px;
+  margin-top: 10px;
 }
 #con03 .send:hover {
   background-color: #ccc;
+  color: #000;
 }
 
 #con03 .send:hover a {
