@@ -1,0 +1,484 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: "Playfair Display", serif;
+}
+
+/* header */
+header {
+  align-items: center;
+  margin: 20px auto;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+header i {
+  font-size: 23px;
+  font-weight: normal;
+}
+header h1 {
+  font-size: 23px;
+  font-weight: normal;
+}
+header h2 {
+  font-size: 23px;
+  font-weight: normal;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+  width: 70px;
+}
+header div {
+  padding: 10px;
+}
+header div:hover {
+  background-color: #ccc;
+}
+
+header h2:hover {
+  background-color: #ccc;
+}
+
+/* container */
+
+#container {
+  width: 1168px;
+  margin: 50px auto 0px;
+}
+#container .food {
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.food > li {
+  width: calc((100% - 60px) / 4);
+  text-align: center;
+  margin-bottom: 30px;
+}
+.food img {
+  width: 100%;
+  display: block;
+}
+.food img:hover {
+  filter: blur(4px);
+}
+.food h2 {
+  margin: 18px 0px;
+  font-weight: normal;
+}
+.num {
+  width: 1168px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  /* gap: 10px; */
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+.num li {
+  color: #000;
+  text-align: center;
+  width: 30px;
+  height: 35px;
+}
+.num li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 35px;
+}
+.num i {
+  font-size: 10px;
+}
+.num li:hover {
+  background-color: #000;
+  color: #fff;
+  height: 35px;
+}
+
+#con02 {
+  margin: 0px auto;
+  width: 1168px;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+#con02 h2 {
+  margin: 50px 0px;
+  font-weight: normal;
+}
+#con02 h3 {
+  margin: 30px 0px;
+}
+#con02 p {
+  margin-bottom: 20px;
+}
+#con02 .border {
+  margin-bottom: 100px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 70px;
+  margin-bottom: 500px;
+}
+footer .footer-wrap {
+  margin: 0px auto;
+  width: 1168px;
+  display: flex;
+}
+.footer-wrap > div {
+  width: calc(100% / 3);
+}
+footer h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.power {
+  margin-top: 30px;
+}
+.power a {
+  text-decoration: underline;
+}
+.blog {
+  margin-left: 100px;
+}
+.blog ul li {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding: 20px 0px 20px 20px;
+}
+.blog ul li:hover {
+  background-color: #aaa;
+}
+.blog img {
+  width: calc(100% / 5);
+  margin-right: 20px;
+}
+
+.pop ul {
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc((100% - 20px) / 1);
+  line-height: 30px;
+}
+
+.pop ul li {
+  padding: 3px 10px;
+  text-align: center;
+  background-color: #aaa;
+  height: 35px;
+  line-height: 35px;
+}
+.lineee {
+  border-bottom: 1px solid #ccc;
+
+  /* width: 80%; */
+}
+
+.pop ul li:hover {
+  background-color: #000;
+  color: #fff;
+}
+/* ========================================
+   CHEF RESPONSIVE
+======================================== */
+
+/* box 크기 계산 안정화 */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media screen and (max-width: 900px) {
+  /* header */
+
+  header {
+    width: 90%;
+  }
+
+  /* container */
+
+  #container {
+    width: 90%;
+    margin: 40px auto 0px;
+  }
+
+  /* food cards
+     4열 → 2열
+  */
+
+  #container .food {
+    gap: 20px;
+  }
+
+  .food > li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* pagination */
+
+  .num {
+    width: 100%;
+  }
+
+  /* about */
+
+  #con02 {
+    width: 90%;
+  }
+
+  #con02 > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* footer */
+
+  footer {
+    margin-bottom: 0px;
+  }
+
+  footer .footer-wrap {
+    width: 90%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+  }
+
+  .footer-wrap > div {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .blog {
+    margin-left: 0px;
+  }
+
+  .pop {
+    width: 100% !important;
+  }
+
+  .blog ul li {
+    width: 100%;
+  }
+
+  .pop ul {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    width: 90%;
+
+    margin: 15px auto;
+
+    font-size: 14px;
+  }
+
+  header h1,
+  header h2,
+  header i {
+    font-size: 16px;
+  }
+
+  header h2 {
+    width: auto;
+    height: auto;
+    line-height: normal;
+  }
+
+  header div {
+    padding: 5px;
+  }
+
+  /* container */
+
+  #container {
+    width: 88%;
+
+    margin-top: 30px;
+  }
+
+  /* food
+     2열 → 1열
+  */
+
+  #container .food {
+    display: block;
+  }
+
+  .food > li {
+    width: 100%;
+
+    margin-bottom: 50px;
+  }
+
+  .food h2 {
+    margin: 15px 0px;
+
+    font-size: 22px;
+  }
+
+  .food p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* pagination */
+
+  .num {
+    width: 100%;
+
+    margin: 20px 0px 50px;
+  }
+
+  /* about */
+
+  #con02 {
+    width: 88%;
+  }
+
+  #con02 h2 {
+    margin: 40px 0px 25px;
+
+    font-size: 24px;
+  }
+
+  #con02 h3 {
+    margin: 25px 0px;
+
+    font-size: 17px;
+  }
+
+  #con02 > img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+  }
+
+  #con02 p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  #con02 .border {
+    margin-bottom: 60px;
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+
+  footer .footer-wrap {
+    width: 88%;
+
+    display: block;
+  }
+
+  .footer-wrap > div {
+    width: 100%;
+
+    margin-bottom: 50px;
+  }
+
+  .blog {
+    margin-left: 0px;
+  }
+
+  .blog ul li {
+    width: 100%;
+
+    padding: 15px 0px;
+  }
+
+  .blog img {
+    width: 25%;
+
+    margin-right: 15px;
+  }
+
+  .pop ul {
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .pop ul li {
+    height: auto;
+
+    padding: 3px 10px;
+
+    line-height: 30px;
+  }
+}
+/* ========================================
+   BACK TO HTML/CSS WORKS
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 600px) {
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

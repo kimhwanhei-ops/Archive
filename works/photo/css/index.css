@@ -1,0 +1,340 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   header
+======================================== */
+
+header {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+header h1 a {
+  display: block;
+
+  padding: 10px;
+}
+
+header h1:hover {
+  background-color: #ccc;
+}
+
+header > div {
+  font-size: 14px;
+}
+
+header > div a {
+  display: block;
+
+  padding: 10px;
+}
+
+header > div:hover {
+  background-color: #ccc;
+}
+
+/* ========================================
+   visual
+======================================== */
+
+.visual {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 0px auto;
+
+  display: flex;
+}
+
+.visual ul {
+  width: 50%;
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+/* ========================================
+   about
+======================================== */
+
+.container {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.container .wrap {
+  width: 90%;
+  max-width: 1300px;
+
+  margin: 0px auto;
+}
+
+.container h2 {
+  padding-top: 50px;
+
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.container .about-img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+
+  margin: 30px 0px;
+}
+
+.container .about-text {
+  max-width: 900px;
+
+  margin: 0px auto;
+
+  line-height: 24px;
+}
+
+.container .contact {
+  margin: 25px 0px;
+
+  color: red;
+
+  font-size: 20px;
+}
+
+/* ========================================
+   form
+======================================== */
+
+.input {
+  width: 100%;
+}
+
+.container .input li {
+  margin-bottom: 20px;
+}
+
+.container .input h3 {
+  margin-bottom: 7px;
+
+  font-weight: normal;
+}
+
+.container input {
+  width: 100%;
+  height: 40px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #ccc;
+
+  font-size: 18px;
+}
+
+.container .send {
+  margin: 15px 0px;
+
+  background-color: #616161;
+  color: #fff;
+
+  font-weight: lighter;
+
+  cursor: pointer;
+}
+
+.container .send:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* ========================================
+   footer
+======================================== */
+
+.container .footer {
+  padding: 30px 0px 100px;
+}
+
+.container .footer a {
+  text-decoration: underline;
+}
+
+.container .footer a:hover {
+  color: green;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  header,
+  .visual {
+    width: 92%;
+  }
+
+  .container .wrap {
+    width: 88%;
+  }
+
+  .container .about-text {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    width: 100%;
+
+    margin: 0px;
+
+    padding: 10px 15px;
+  }
+
+  header h1 {
+    font-size: 14px;
+  }
+
+  /* gallery
+     2열 → 1열
+  */
+
+  .visual {
+    width: 100%;
+
+    display: block;
+  }
+
+  .visual ul {
+    width: 100%;
+  }
+
+  /* about */
+
+  .container .wrap {
+    width: 88%;
+  }
+
+  .container h2 {
+    padding-top: 40px;
+
+    font-size: 26px;
+  }
+
+  .container .about-img {
+    width: 230px;
+
+    margin: 25px 0px;
+  }
+
+  .container .about-text {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .container .contact {
+    margin: 25px 0px;
+
+    font-size: 17px;
+  }
+
+  /* form */
+
+  .container .input h3 {
+    text-align: left;
+
+    font-size: 14px;
+  }
+
+  .container input {
+    height: 38px;
+
+    font-size: 15px;
+  }
+
+  .container .send {
+    height: 40px;
+  }
+
+  /* footer */
+
+  .container .footer {
+    padding: 30px 0px 80px;
+
+    font-size: 13px;
+  }
+
+  /* back button */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

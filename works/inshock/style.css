@@ -1,0 +1,397 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   header
+======================================== */
+
+header {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 20px auto;
+}
+
+header a {
+  display: inline-block;
+
+  padding: 8px;
+}
+
+header a:hover {
+  background-color: #eee;
+}
+
+/* ========================================
+   container
+======================================== */
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 0px auto;
+}
+
+/* con01 */
+
+.con01 {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con01 > div {
+  width: calc((100% - 20px) / 2);
+}
+
+.hello {
+  color: #eee;
+
+  font-size: 30px;
+}
+
+.we {
+  color: #ccc;
+
+  font-size: 25px;
+}
+
+.inshok {
+  font-size: 40px;
+}
+
+.left p {
+  line-height: 50px;
+}
+
+.right p {
+  margin: 20px 0px 30px;
+
+  color: #888;
+
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* ========================================
+   con02
+======================================== */
+
+.con02 {
+  margin: 25px 0px;
+}
+
+.con02 h2 {
+  margin-bottom: 20px;
+
+  color: #aaa;
+
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.wrap02 {
+  display: flex;
+
+  gap: 20px;
+}
+
+.wrap02 > div {
+  width: calc((100% - 20px) / 2);
+}
+
+.wrap02 img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.wrap02 p {
+  margin-top: 10px;
+
+  color: #aaa;
+
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* ========================================
+   footer
+======================================== */
+
+footer {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 0px auto;
+}
+
+.wrap03 {
+  display: flex;
+
+  color: #fff;
+}
+
+.wrap03 > li {
+  width: calc(100% / 3);
+
+  padding: 15px;
+}
+
+.bg01 {
+  background-color: #000;
+}
+
+.bg02 {
+  background-color: #777;
+}
+
+.bg03 {
+  background-color: #aaa;
+}
+
+.bg02,
+.bg03 {
+  text-align: center;
+}
+
+footer h3 {
+  margin-bottom: 20px;
+}
+
+footer span {
+  margin-left: 10px;
+}
+
+.phone {
+  margin: 10px 0px;
+}
+
+.bg02 p {
+  font-size: 13px;
+  line-height: 30px;
+}
+
+.bg03 i {
+  display: block;
+
+  margin: 10px auto;
+}
+
+.power {
+  margin: 20px 0px 0px 20px;
+
+  font-size: 14px;
+}
+
+.power a {
+  text-decoration: underline;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  header,
+  .container,
+  footer {
+    width: 88%;
+  }
+
+  .hello {
+    font-size: 27px;
+  }
+
+  .we {
+    font-size: 23px;
+  }
+
+  .inshok {
+    font-size: 36px;
+  }
+
+  .right p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .wrap02 p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .wrap03 > li {
+    padding: 12px;
+  }
+
+  footer span {
+    margin-left: 5px;
+
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    width: 88%;
+
+    margin: 15px auto;
+  }
+
+  /* con01 */
+
+  .con01 {
+    display: block;
+  }
+
+  .con01 > div {
+    width: 100%;
+  }
+
+  .left {
+    margin-bottom: 25px;
+  }
+
+  .hello {
+    font-size: 25px;
+  }
+
+  .we {
+    font-size: 22px;
+  }
+
+  .inshok {
+    font-size: 35px;
+  }
+
+  .left p {
+    line-height: 43px;
+  }
+
+  .right p {
+    margin: 10px 0px 20px;
+
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  /* con02 */
+
+  .con02 {
+    margin-top: 50px;
+  }
+
+  .wrap02 {
+    display: block;
+  }
+
+  .wrap02 > div {
+    width: 100%;
+
+    margin-bottom: 25px;
+  }
+
+  .wrap02 p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  /* footer */
+
+  footer {
+    width: 88%;
+
+    margin-top: 40px;
+  }
+
+  .wrap03 {
+    display: block;
+  }
+
+  .wrap03 > li {
+    width: 100%;
+
+    padding: 25px;
+  }
+
+  .bg02,
+  .bg03 {
+    text-align: left;
+  }
+
+  .bg03 i {
+    display: inline-block;
+
+    margin: 5px 12px 5px 0px;
+
+    font-size: 18px;
+  }
+
+  .power {
+    margin: 20px 0px;
+
+    font-size: 12px;
+  }
+
+  /* back button */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

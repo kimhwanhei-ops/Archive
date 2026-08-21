@@ -1,0 +1,1076 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+/* ========================================
+   header
+======================================== */
+
+.header h1 {
+  margin: 30px 0px 20px;
+
+  text-align: center;
+}
+
+.header h1 a {
+  display: inline-block;
+}
+
+.header h1 img {
+  width: 150px;
+  height: auto;
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header li a {
+  display: block;
+
+  padding: 8px 5px;
+}
+
+.header li a:hover {
+  color: #777;
+}
+
+/* ========================================
+   visual
+======================================== */
+
+.visual {
+  width: 90%;
+  max-width: 1600px;
+
+  margin: 36px auto;
+}
+
+.visual img {
+  width: 100%;
+  height: 700px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   banner
+======================================== */
+
+.banner {
+  width: 90%;
+  max-width: 1600px;
+
+  margin: 30px auto;
+
+  text-align: center;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+
+  margin: 0px auto;
+}
+
+/* ========================================
+   공통 섹션 폭
+======================================== */
+
+.con2,
+.con3,
+.con4,
+.con6,
+.con7,
+.con8,
+.con09,
+.con10 {
+  width: 90%;
+  max-width: 1600px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 공통 큰 제목 */
+
+.con2 h2,
+.con3 h2,
+.con4 h2,
+.con6 h2,
+.con7 h2,
+.con8 h2,
+.con09 h2,
+.con10 h2 {
+  font-size: 55px;
+}
+
+/* 공통 기사 정보 */
+
+.con3 h3,
+.con4 h3,
+.con6 h3,
+.con7 h3,
+.con8 h3,
+.con09 h3,
+.con10 h3 {
+  font-size: 12px;
+}
+
+.con3 h4,
+.con4 h4,
+.con6 h4,
+.con7 h4,
+.con8 h4,
+.con09 h4,
+.con10 h4 {
+  margin: 10px 0px;
+}
+
+.con3 li > div,
+.con4 li > div,
+.con6 li > div,
+.con7 li > div,
+.con8 li > div,
+.con09 li > div,
+.con10 li > div {
+  color: #333;
+
+  font-size: 10px;
+}
+
+/* ========================================
+   TODAY'S STORIES
+======================================== */
+
+.con2 {
+  background-color: #fff;
+}
+
+.con2 h2 {
+  margin: 30px 0px 10px;
+}
+
+.stories {
+  display: flex;
+
+  gap: 30px;
+}
+
+.stories > .left {
+  width: calc(38% - 15px);
+}
+
+.stories > .right {
+  width: calc(62% - 15px);
+}
+
+.stories .left img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.stories .right ul {
+  display: flex;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.stories .right ul:last-child {
+  margin-bottom: 0px;
+}
+
+.stories .right li {
+  width: calc((100% - 30px) / 2);
+}
+
+.stories .right img {
+  width: 100%;
+  height: auto;
+}
+
+.stories .right h3 {
+  margin-top: 20px;
+
+  font-size: 12px;
+}
+
+.stories .right h4 {
+  margin: 6px 0px;
+}
+
+.stories .right li > div {
+  color: darkblue;
+
+  font-size: 12px;
+}
+
+/* ========================================
+   BEST STORIES
+======================================== */
+
+.con3 {
+  margin-top: 80px;
+}
+
+.con3 ul {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con3 li {
+  width: calc((100% - 60px) / 4);
+}
+
+.con3 img {
+  width: 100%;
+  height: auto;
+
+  margin: 10px 0px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   MUST READ
+======================================== */
+
+.con4 {
+  margin-top: 250px;
+}
+
+.con4 ul {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con4 li {
+  width: calc((100% - 60px) / 4);
+}
+
+.con4 img {
+  width: 100%;
+  height: 385px;
+
+  margin: 10px 0px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   PEOPLE NOW
+======================================== */
+
+.con5 {
+  margin-top: 100px;
+
+  padding: 20px;
+
+  background-color: #999;
+}
+
+.con5 .people {
+  width: 90%;
+  max-width: 1600px;
+
+  margin: 0px auto;
+}
+
+.con5 .people ul {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con5 li {
+  width: calc((100% - 60px) / 4);
+}
+
+.con5 h5 {
+  margin: 20px 0px 5px 10px;
+
+  font-size: 55px;
+  line-height: 50px;
+}
+
+.con5 p {
+  font-size: 16px;
+}
+
+.con5 img {
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   FASHION
+======================================== */
+
+.con6 {
+  margin-top: 150px;
+}
+
+.fashion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fashion-title > a,
+.beauty-title > a,
+.con09-title > a,
+.con10-title > a {
+  padding: 10px;
+}
+
+.con6 .fashion {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con6 .left {
+  width: calc(62% - 10px);
+}
+
+.con6 .right {
+  width: calc(38% - 10px);
+}
+
+.con6 .left ul {
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.con6 .left li {
+  width: calc((100% - 20px) / 2);
+}
+
+.con6 .left img,
+.con6 .right img {
+  width: 100%;
+  height: auto;
+}
+
+.con6 h4 {
+  min-height: 44px;
+}
+
+/* ========================================
+   BEAUTY
+======================================== */
+
+.con7 {
+  margin-top: 150px;
+}
+
+.beauty-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con7 .beautys {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con7 .left {
+  width: calc(38% - 10px);
+}
+
+.con7 .right {
+  width: calc(62% - 10px);
+}
+
+.con7 .left img {
+  width: 100%;
+  height: auto;
+}
+
+.con7 .right ul {
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.con7 .right li {
+  width: calc((100% - 20px) / 2);
+}
+
+.con7 .right img {
+  width: 100%;
+  height: auto;
+}
+
+.con7 h4 {
+  min-height: 44px;
+}
+
+/* ========================================
+   LIVING
+======================================== */
+
+.con09 {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.con09-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con09 ul {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con09 li {
+  width: calc((100% - 60px) / 4);
+}
+
+.con09 img {
+  width: 100%;
+  height: 385px;
+
+  margin: 10px 0px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   CULTURE
+======================================== */
+
+.con10 {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.con10-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con10 ul {
+  display: flex;
+
+  gap: 20px;
+}
+
+.con10 li {
+  width: calc((100% - 60px) / 4);
+}
+
+.con10 img {
+  width: 100%;
+  height: 385px;
+
+  margin: 10px 0px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   LATEST STORIES
+======================================== */
+
+.con8 {
+  margin-top: 200px;
+}
+
+.con8 ul {
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 50px;
+}
+
+/* 한 줄에 실제 3개이므로 3등분 */
+
+.con8 li {
+  width: calc((100% - 40px) / 3);
+}
+
+.con8 img {
+  width: 100%;
+  height: auto;
+
+  margin: 10px 0px;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   footer
+======================================== */
+
+.footer {
+  margin-top: 100px;
+
+  padding: 100px 20px;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.footer .logo {
+  text-align: center;
+}
+
+.footer .logo a {
+  display: inline-block;
+}
+
+.footer img {
+  width: 200px;
+  height: auto;
+
+  margin: 0px auto;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 20px 0px;
+}
+
+.footer li a {
+  display: block;
+
+  padding: 7px;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.footer .korea {
+  width: 120px;
+
+  margin: 0px auto 20px;
+
+  padding: 11px 10px;
+
+  border: 1px solid #787878;
+
+  text-align: center;
+
+  letter-spacing: 2px;
+}
+
+.footer .korea a {
+  display: block;
+}
+
+.footer p {
+  color: #787878;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media screen and (max-width: 900px) {
+  /* header */
+
+  .header ul {
+    flex-wrap: wrap;
+
+    gap: 5px 15px;
+  }
+
+  /* visual */
+
+  .visual {
+    width: 100%;
+
+    margin-top: 25px;
+  }
+
+  .visual img {
+    height: 450px;
+  }
+
+  /* section titles */
+
+  .con2 h2,
+  .con3 h2,
+  .con4 h2,
+  .con6 h2,
+  .con7 h2,
+  .con8 h2,
+  .con09 h2,
+  .con10 h2 {
+    font-size: 40px;
+  }
+
+  /* today */
+
+  .stories {
+    display: block;
+  }
+
+  .stories > .left,
+  .stories > .right {
+    width: 100%;
+  }
+
+  .stories > .left {
+    margin-bottom: 30px;
+  }
+
+  .stories .left img {
+    max-height: 700px;
+  }
+
+  /* 4열 → 2열 */
+
+  .con3 ul,
+  .con4 ul,
+  .con09 ul,
+  .con10 ul {
+    flex-wrap: wrap;
+  }
+
+  .con3 li,
+  .con4 li,
+  .con09 li,
+  .con10 li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* people */
+
+  .con5 .people ul {
+    flex-wrap: wrap;
+  }
+
+  .con5 li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .con5 h5 {
+    font-size: 42px;
+    line-height: 40px;
+  }
+
+  /* fashion */
+
+  .con6 .fashion {
+    display: block;
+  }
+
+  .con6 .left,
+  .con6 .right {
+    width: 100%;
+  }
+
+  .con6 .right {
+    margin-top: 30px;
+  }
+
+  .con6 .right img {
+    max-height: 800px;
+
+    object-fit: cover;
+  }
+
+  /* beauty */
+
+  .con7 .beautys {
+    display: block;
+  }
+
+  .con7 .left,
+  .con7 .right {
+    width: 100%;
+  }
+
+  .con7 .left {
+    margin-bottom: 30px;
+  }
+
+  .con7 .left img {
+    max-height: 800px;
+
+    object-fit: cover;
+  }
+
+  /* latest */
+
+  .con8 ul {
+    flex-wrap: wrap;
+  }
+
+  .con8 li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* 큰 여백 축소 */
+
+  .con4,
+  .con6,
+  .con7,
+  .con8 {
+    margin-top: 120px;
+  }
+
+  .con09,
+  .con10 {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  .header h1 {
+    margin: 25px 0px 15px;
+  }
+
+  .header h1 img {
+    width: 130px;
+  }
+
+  .header ul {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0px;
+  }
+
+  .header li {
+    width: 50%;
+
+    text-align: center;
+  }
+
+  .header li:last-child {
+    width: 100%;
+  }
+
+  .header li a {
+    padding: 10px;
+
+    font-size: 11px;
+  }
+
+  /* visual */
+
+  .visual img {
+    height: 280px;
+  }
+
+  /* banner */
+
+  .banner {
+    width: 92%;
+  }
+
+  /* common */
+
+  .con2,
+  .con3,
+  .con4,
+  .con6,
+  .con7,
+  .con8,
+  .con09,
+  .con10 {
+    width: 88%;
+  }
+
+  .con2 h2,
+  .con3 h2,
+  .con4 h2,
+  .con6 h2,
+  .con7 h2,
+  .con8 h2,
+  .con09 h2,
+  .con10 h2 {
+    font-size: 30px;
+  }
+
+  /* today */
+
+  .stories .right ul {
+    display: block;
+
+    margin-bottom: 0px;
+  }
+
+  .stories .right li {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  /* 4열 콘텐츠 → 1열 */
+
+  .con3 ul,
+  .con4 ul,
+  .con09 ul,
+  .con10 ul {
+    display: block;
+  }
+
+  .con3 li,
+  .con4 li,
+  .con09 li,
+  .con10 li {
+    width: 100%;
+
+    margin-bottom: 40px;
+  }
+
+  .con4 img,
+  .con09 img,
+  .con10 img {
+    height: auto;
+  }
+
+  /* people */
+
+  .con5 {
+    padding: 40px 0px;
+  }
+
+  .con5 .people {
+    width: 88%;
+  }
+
+  .con5 .people ul {
+    display: block;
+  }
+
+  .con5 li {
+    width: 100%;
+
+    margin-bottom: 30px;
+  }
+
+  .con5 .people-title {
+    padding: 10px 0px 20px;
+  }
+
+  .con5 h5 {
+    margin-left: 0px;
+
+    font-size: 38px;
+    line-height: 37px;
+  }
+
+  /* fashion */
+
+  .fashion-title,
+  .beauty-title,
+  .con09-title,
+  .con10-title {
+    align-items: center;
+  }
+
+  .fashion-title > a,
+  .beauty-title > a,
+  .con09-title > a,
+  .con10-title > a {
+    font-size: 11px;
+  }
+
+  .con6 .left ul {
+    display: block;
+
+    margin-bottom: 0px;
+  }
+
+  .con6 .left li {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  .con6 h4 {
+    min-height: 0px;
+  }
+
+  .con6 .right img {
+    max-height: none;
+  }
+
+  /* beauty */
+
+  .con7 .right ul {
+    display: block;
+
+    margin-bottom: 0px;
+  }
+
+  .con7 .right li {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  .con7 h4 {
+    min-height: 0px;
+  }
+
+  .con7 .left img {
+    max-height: none;
+  }
+
+  /* latest */
+
+  .con8 ul {
+    display: block;
+
+    margin-bottom: 0px;
+  }
+
+  .con8 li {
+    width: 100%;
+
+    margin-bottom: 40px;
+  }
+
+  /* 여백 */
+
+  .con3 {
+    margin-top: 70px;
+  }
+
+  .con4,
+  .con6,
+  .con7,
+  .con8 {
+    margin-top: 90px;
+  }
+
+  .con09,
+  .con10 {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  /* footer */
+
+  .footer {
+    padding: 70px 20px;
+  }
+
+  .footer img {
+    width: 160px;
+  }
+
+  .footer ul {
+    display: block;
+
+    text-align: center;
+  }
+
+  .footer li a {
+    padding: 7px;
+  }
+
+  .footer p {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  /* back */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

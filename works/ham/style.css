@@ -1,0 +1,604 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   header
+======================================== */
+
+header {
+  width: 100%;
+  max-width: 2000px;
+
+  margin: 0px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 20px;
+
+  box-shadow: 0px 3px 2px 0px #000;
+}
+
+h1 {
+  padding: 0px;
+
+  font-size: 15px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+h1 a {
+  display: block;
+
+  padding: 10px;
+
+  line-height: 35px;
+}
+
+h1:hover {
+  background-color: #ccc;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  width: 120px;
+  height: 50px;
+
+  text-align: center;
+
+  letter-spacing: 5px;
+  line-height: 50px;
+}
+
+.menu li a {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.menu li:hover {
+  background-color: #ccc;
+}
+
+/* ========================================
+   visual
+======================================== */
+
+.visual {
+  width: 90%;
+  max-width: 1600px;
+
+  margin: 50px auto;
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+/* ========================================
+   container
+======================================== */
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+
+  margin: 0px auto;
+}
+
+/* con01 */
+
+.con01 {
+  display: flex;
+
+  gap: 60px;
+
+  border-bottom: 1px solid #aaa;
+}
+
+.con01 .img01 {
+  width: calc((100% - 60px) / 2);
+}
+
+.con01 img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  margin-bottom: 60px;
+
+  opacity: 70%;
+}
+
+.con01 .title01 {
+  width: calc((100% - 60px) / 2);
+
+  padding: 70px 0px;
+
+  text-align: center;
+}
+
+.con01 .title01 h2 {
+  font-size: 43px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.con01 .title01 h3 {
+  margin: 35px 0px 25px;
+
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.con01 .title01 p {
+  margin-bottom: 30px;
+
+  text-align: left;
+
+  line-height: 23px;
+}
+
+.con01 .season {
+  background-color: #ccc;
+}
+
+.con01 .title01 .p2 {
+  color: #999;
+}
+
+/* ========================================
+   con02
+======================================== */
+
+.con02 {
+  margin-top: 60px;
+
+  display: flex;
+
+  gap: 60px;
+}
+
+.con02 .img02 {
+  width: calc((100% - 60px) / 2);
+
+  opacity: 70%;
+}
+
+.con02 .img02 img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.con02 .title02 {
+  width: calc((100% - 60px) / 2);
+
+  padding: 75px 0px;
+
+  text-align: center;
+}
+
+.con02 .title02 h2 {
+  font-size: 43px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.con02 .title02 h3 {
+  margin: 35px 0px 25px;
+
+  text-align: left;
+
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.con02 .title02 p {
+  margin-bottom: 30px;
+
+  text-align: left;
+
+  color: #aaa;
+
+  line-height: 22px;
+}
+
+/* ========================================
+   footer
+======================================== */
+
+.wrap {
+  width: 90%;
+  max-width: 1300px;
+
+  margin: 0px auto;
+}
+
+footer h2 {
+  font-size: 43px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+footer h3 {
+  font-size: 25px;
+  font-weight: normal;
+
+  color: blue;
+}
+
+footer p {
+  margin: 20px 0px;
+
+  line-height: 20px;
+}
+
+footer li {
+  padding: 20px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+footer .send01 {
+  width: 170px;
+
+  margin: 30px 0px;
+
+  padding: 10px;
+
+  text-align: center;
+
+  background-color: #ccc;
+
+  cursor: pointer;
+}
+
+footer .send01:hover {
+  background-color: #aaa;
+}
+
+.power {
+  margin-top: 30px;
+
+  padding: 60px;
+
+  text-align: center;
+
+  background-color: #ccc;
+
+  font-size: 20px;
+}
+
+.power a {
+  text-decoration: underline;
+}
+
+.icon01 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  /* header */
+
+  header {
+    padding-left: 10px;
+  }
+
+  h1 {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .menu li {
+    width: 100px;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+  }
+
+  /* visual */
+
+  .visual {
+    width: 92%;
+
+    margin: 35px auto;
+  }
+
+  /* contents */
+
+  .container {
+    width: 88%;
+  }
+
+  .con01,
+  .con02 {
+    gap: 35px;
+  }
+
+  .con01 .img01,
+  .con01 .title01,
+  .con02 .img02,
+  .con02 .title02 {
+    width: calc((100% - 35px) / 2);
+  }
+
+  .con01 .title01,
+  .con02 .title02 {
+    padding: 40px 0px;
+  }
+
+  .con01 .title01 h2,
+  .con02 .title02 h2 {
+    font-size: 32px;
+  }
+
+  .con01 .title01 h3,
+  .con02 .title02 h3 {
+    font-size: 19px;
+
+    margin: 25px 0px 20px;
+  }
+
+  .con01 .title01 p,
+  .con02 .title02 p {
+    font-size: 13px;
+  }
+
+  /* footer */
+
+  .wrap {
+    width: 88%;
+  }
+
+  footer h2 {
+    font-size: 34px;
+  }
+
+  footer h3 {
+    font-size: 20px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    display: block;
+
+    padding: 0px;
+  }
+
+  h1 {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 13px;
+  }
+
+  h1 a {
+    padding: 10px;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu li {
+    width: calc(100% / 3);
+
+    height: 42px;
+
+    line-height: 42px;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  /* visual */
+
+  .visual {
+    width: 100%;
+
+    margin: 25px auto 50px;
+  }
+
+  /* container */
+
+  .container {
+    width: 88%;
+  }
+
+  /* about */
+
+  .con01 {
+    display: block;
+
+    border-bottom: 1px solid #aaa;
+  }
+
+  .con01 .img01 {
+    width: 100%;
+  }
+
+  .con01 img {
+    margin-bottom: 0px;
+  }
+
+  .con01 .title01 {
+    width: 100%;
+
+    padding: 45px 0px;
+  }
+
+  .con01 .title01 h2 {
+    font-size: 28px;
+  }
+
+  .con01 .title01 h3 {
+    margin: 25px 0px;
+
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+
+  .con01 .title01 p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  /* menu section */
+
+  .con02 {
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  .con02 .title02 {
+    width: 100%;
+
+    padding: 40px 0px;
+  }
+
+  .con02 .title02 h2 {
+    font-size: 28px;
+  }
+
+  .con02 .title02 h3 {
+    margin: 28px 0px 12px;
+
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+  .con02 .title02 p {
+    margin-bottom: 20px;
+
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .con02 .img02 {
+    width: 100%;
+  }
+
+  /* footer */
+
+  .wrap {
+    width: 88%;
+
+    padding-top: 50px;
+  }
+
+  footer h2 {
+    font-size: 30px;
+  }
+
+  footer h3 {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  footer p {
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  footer li {
+    padding: 15px 5px;
+
+    font-size: 13px;
+  }
+
+  footer .send01 {
+    width: 150px;
+
+    margin: 25px 0px;
+
+    font-size: 12px;
+  }
+
+  .power {
+    padding: 40px 10px;
+
+    font-size: 14px;
+  }
+
+  /* back button */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

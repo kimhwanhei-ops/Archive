@@ -1,0 +1,413 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   header
+======================================== */
+
+header {
+  background-color: #f44336ff;
+}
+
+header ul {
+  display: flex;
+}
+
+header li {
+  padding: 0px;
+}
+
+header li a {
+  display: block;
+
+  padding: 10px 20px;
+
+  color: #fff;
+}
+
+header li:hover {
+  background-color: #fff;
+}
+
+header li:hover a {
+  color: #000;
+}
+
+header .home1 {
+  background-color: #fff;
+}
+
+header .home {
+  color: #000;
+}
+
+header .home1:hover {
+  background-color: #ccc;
+}
+
+/* ========================================
+   visual
+======================================== */
+
+.visual {
+  padding: 100px 0px;
+
+  background-color: #f44336ff;
+
+  text-align: center;
+}
+
+.visual h2 {
+  color: #fff;
+
+  font-size: 50px;
+  font-weight: normal;
+
+  letter-spacing: 3px;
+}
+
+.visual h3 {
+  margin: 30px 0px;
+
+  color: #fff;
+
+  font-weight: normal;
+}
+
+.visual div {
+  width: 120px;
+
+  margin: 0px auto;
+
+  background-color: #000;
+}
+
+.visual div a {
+  display: block;
+
+  width: 100%;
+
+  padding: 7px 0px;
+
+  color: #fff;
+}
+
+.visual div:hover {
+  background-color: #ccc;
+}
+
+.visual div:hover a {
+  color: #000;
+}
+
+/* ========================================
+   contents
+======================================== */
+
+.con01 {
+  background-color: #fff;
+}
+
+.con02 {
+  background-color: #ccc;
+}
+
+.container .wrap {
+  width: 800px;
+
+  margin: 0px auto;
+  padding: 50px 0px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.container .wrap > div {
+  width: calc((100% - 30px) / 2);
+}
+
+.container i {
+  color: #f44336ff;
+
+  font-size: 150px;
+}
+
+.container h4 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.container p {
+  margin: 30px 0px;
+
+  line-height: 25px;
+}
+
+.container .co_gray {
+  margin-top: 50px;
+
+  color: darkgrey;
+
+  font-weight: normal;
+}
+
+/* 첫 번째 아이콘 */
+
+.con01 .right {
+  text-align: center;
+}
+
+/* 두 번째 아이콘 */
+
+.con02 .left {
+  text-align: center;
+}
+
+/* ========================================
+   quote
+======================================== */
+
+.con03 {
+  padding: 70px 0px;
+
+  background-color: #666666ff;
+  color: #fff;
+
+  text-align: center;
+
+  font-size: 25px;
+}
+
+/* ========================================
+   footer
+======================================== */
+
+footer {
+  padding: 70px 0px;
+
+  text-align: center;
+
+  line-height: 75px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li a {
+  display: block;
+
+  padding: 5px 8px;
+}
+
+footer i {
+  font-size: 25px;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+footer ul a {
+  text-decoration: none;
+}
+
+footer ul li:hover {
+  opacity: 0.3;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  .container .wrap {
+    width: 88%;
+  }
+
+  .container i {
+    font-size: 120px;
+  }
+
+  .visual h2 {
+    font-size: 42px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header li {
+    width: 50%;
+  }
+
+  header li:last-child {
+    width: 100%;
+  }
+
+  header li a {
+    width: 100%;
+
+    padding: 12px 10px;
+
+    text-align: center;
+
+    font-size: 13px;
+  }
+
+  /* visual */
+
+  .visual {
+    padding: 70px 20px;
+  }
+
+  .visual h2 {
+    font-size: 36px;
+
+    letter-spacing: 2px;
+  }
+
+  .visual h3 {
+    margin: 25px 0px;
+
+    font-size: 15px;
+  }
+
+  /* contents */
+
+  .container .wrap {
+    width: 88%;
+
+    display: block;
+
+    padding: 55px 0px;
+  }
+
+  .container .wrap > div {
+    width: 100%;
+  }
+
+  .container h4 {
+    font-size: 22px;
+  }
+
+  .container p {
+    margin: 25px 0px;
+
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .container .co_gray {
+    margin-top: 35px;
+  }
+
+  .container i {
+    font-size: 100px;
+  }
+
+  /* 첫 번째 섹션
+     텍스트 아래 아이콘
+  */
+
+  .con01 .right {
+    margin-top: 35px;
+
+    text-align: center;
+  }
+
+  /* 두 번째 섹션
+     아이콘 아래 텍스트
+  */
+
+  .con02 .left {
+    margin-bottom: 35px;
+
+    text-align: center;
+  }
+
+  /* quote */
+
+  .con03 {
+    padding: 50px 20px;
+
+    font-size: 20px;
+  }
+
+  /* footer */
+
+  footer {
+    padding: 50px 0px;
+
+    line-height: 50px;
+  }
+
+  footer i {
+    font-size: 22px;
+  }
+
+  /* back button */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

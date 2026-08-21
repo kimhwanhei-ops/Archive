@@ -1,0 +1,221 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   title
+======================================== */
+
+.container > h2 {
+  padding: 50px 0px;
+
+  background-color: #ccc;
+
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: normal;
+}
+
+/* ========================================
+   contents
+======================================== */
+
+.wrap {
+  width: 90%;
+  max-width: 1400px;
+
+  margin: 30px auto;
+
+  display: flex;
+
+  gap: 20px;
+}
+
+/* 68% + 32%에서 gap 20px을 각각 10px씩 차감 */
+
+.wrap .left {
+  width: calc(68% - 10px);
+}
+
+.wrap .news {
+  width: calc(32% - 10px);
+}
+
+/* main article */
+
+.left img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.wrap h3 {
+  margin: 10px 0px 20px;
+
+  font-weight: normal;
+}
+
+.left p {
+  margin-bottom: 20px;
+
+  line-height: 25px;
+}
+
+/* side news */
+
+.news li {
+  margin-bottom: 20px;
+
+  padding: 15px;
+
+  background-color: #ccc;
+}
+
+.news p {
+  line-height: 25px;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  .wrap {
+    width: 88%;
+  }
+
+  .wrap .left {
+    width: calc(62% - 10px);
+  }
+
+  .wrap .news {
+    width: calc(38% - 10px);
+  }
+
+  .left p,
+  .news p {
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .wrap h3 {
+    font-size: 18px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* title */
+
+  .container > h2 {
+    padding: 35px 0px;
+
+    font-size: 25px;
+  }
+
+  /* 2단 → 1단 */
+
+  .wrap {
+    width: 88%;
+
+    display: block;
+
+    margin-top: 25px;
+  }
+
+  .wrap .left,
+  .wrap .news {
+    width: 100%;
+  }
+
+  /* main */
+
+  .left h3 {
+    margin-top: 20px;
+
+    font-size: 20px;
+  }
+
+  .left p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  /* news */
+
+  .news {
+    margin-top: 40px;
+  }
+
+  .news li {
+    margin-bottom: 20px;
+
+    padding: 20px;
+  }
+
+  .news h3 {
+    font-size: 18px;
+  }
+
+  .news p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  /* back button */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

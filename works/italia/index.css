@@ -1,0 +1,185 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========================================
+   title
+======================================== */
+
+h2 {
+  padding: 20px 0px 20px 20px;
+
+  background-color: #009688;
+  color: #fff;
+
+  font-size: 38px;
+  font-weight: lighter;
+}
+
+/* ========================================
+   contents
+======================================== */
+
+li {
+  width: 941px;
+
+  margin: 0px auto;
+  padding: 10px 0px;
+
+  display: flex;
+}
+
+li > img {
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+li > div {
+  margin: 20px;
+}
+
+li h3 {
+  margin-bottom: 10px;
+
+  font-size: 30px;
+  font-weight: normal;
+}
+
+li p {
+  font-weight: normal;
+  line-height: 22px;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀 버튼
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  h2 {
+    font-size: 32px;
+  }
+
+  li {
+    width: 90%;
+  }
+
+  li > img {
+    width: 45%;
+    object-fit: cover;
+  }
+
+  li > div {
+    width: 55%;
+
+    margin: 15px 0px 15px 20px;
+  }
+
+  li h3 {
+    font-size: 25px;
+  }
+
+  li p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  h2 {
+    padding: 18px;
+
+    font-size: 27px;
+  }
+
+  li {
+    width: 88%;
+
+    display: block;
+
+    padding: 20px 0px;
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  li > img {
+    width: 100%;
+    height: auto;
+  }
+
+  li > div {
+    width: 100%;
+
+    margin: 20px 0px;
+  }
+
+  li h3 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+  }
+
+  li p {
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}

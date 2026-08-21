@@ -1,0 +1,436 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  color: #111;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  min-height: 60px;
+  padding: 0px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #000;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+header h1 a {
+  display: block;
+}
+
+header ul {
+  display: flex;
+}
+
+header li {
+  padding: 0px;
+}
+
+header li a {
+  display: block;
+  padding: 22px 20px;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+header li:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* visual */
+
+.visual {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0px auto;
+  padding: 110px 0px 100px;
+}
+
+.visual .archive {
+  margin-bottom: 25px;
+
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.visual h2 {
+  font-size: 80px;
+  line-height: 78px;
+
+  font-weight: normal;
+  letter-spacing: -2px;
+}
+
+.visual .line {
+  width: 80px;
+  margin: 40px 0px;
+
+  border-bottom: 3px solid #000;
+}
+
+.visual .visual-text {
+  color: #777;
+
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.visual .owner {
+  margin-top: 20px;
+
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* projects */
+
+#projects {
+  width: 100%;
+  padding: 100px 0px;
+
+  background-color: #eee;
+}
+
+.projects-title {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0px auto 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.projects-title h2 {
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.projects-info {
+  text-align: right;
+}
+
+.projects-info p {
+  color: #777;
+
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 2px;
+}
+
+/* project cards */
+
+.project-list {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0px auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.project-list > li {
+  width: calc((100% - 40px) / 3);
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.project-list > li > a {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* image */
+
+.thumb {
+  width: 100%;
+  height: 420px;
+
+  padding: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f8f8f8;
+}
+
+.thumb img {
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  display: block;
+}
+
+/* project text */
+
+.project-text {
+  padding: 25px;
+}
+
+.project-text .num {
+  margin-bottom: 25px;
+
+  color: #aaa;
+  font-size: 11px;
+}
+
+.project-text h3 {
+  margin-bottom: 10px;
+
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.project-text .type {
+  color: #888;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.project-text .view {
+  margin-top: 30px;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* hover */
+
+.project-list > li:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.project-list > li:hover .num {
+  color: #777;
+}
+
+.project-list > li:hover .type {
+  color: #aaa;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  padding: 70px 0px;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-inner {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  width: calc(100% / 3);
+}
+
+.footer-left h2 {
+  margin-bottom: 10px;
+
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+.footer-left p,
+.footer-center p {
+  color: #888;
+
+  font-size: 10px;
+  line-height: 19px;
+  letter-spacing: 2px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-center .name {
+  color: #fff;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right a {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
+.footer-right a:hover {
+  color: #aaa;
+}
+
+/* tablet */
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 0px 20px;
+  }
+
+  header li a {
+    padding: 22px 10px;
+    font-size: 10px;
+  }
+
+  .visual h2 {
+    font-size: 64px;
+    line-height: 62px;
+  }
+
+  .project-list > li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .thumb {
+    height: 360px;
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 20px;
+    display: block;
+  }
+
+  header h1 {
+    margin-bottom: 15px;
+  }
+
+  header ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header li {
+    width: 50%;
+  }
+
+  header li a {
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .visual {
+    padding: 70px 0px;
+  }
+
+  .visual .archive {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .visual h2 {
+    font-size: 48px;
+    line-height: 47px;
+  }
+
+  .visual .visual-text {
+    font-size: 12px;
+  }
+
+  #projects {
+    padding: 70px 0px;
+  }
+
+  .projects-title {
+    display: block;
+  }
+
+  .projects-title h2 {
+    margin-bottom: 20px;
+    font-size: 27px;
+  }
+
+  .projects-info {
+    text-align: left;
+  }
+
+  .project-list > li {
+    width: 100%;
+  }
+
+  .thumb {
+    height: 430px;
+  }
+
+  .project-text h3 {
+    font-size: 20px;
+  }
+
+  .footer-inner {
+    display: block;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer-center {
+    margin: 35px 0px;
+  }
+}

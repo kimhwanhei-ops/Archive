@@ -1,0 +1,480 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+/* ========================================
+   header
+======================================== */
+
+header {
+  width: 100%;
+  max-width: 1920px;
+
+  margin: 0px auto;
+
+  border-top: 15px solid #000;
+}
+
+.header-wrap {
+  width: 95%;
+  max-width: 1840px;
+
+  margin: 15px auto 0px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 45px;
+
+  letter-spacing: -2px;
+}
+
+header h1 {
+  flex-shrink: 0;
+}
+
+header h1 a {
+  display: block;
+}
+
+header img {
+  width: 120px;
+  height: 60px;
+
+  object-fit: contain;
+}
+
+header h2 {
+  flex-shrink: 0;
+
+  font-size: 18px;
+}
+
+header h2 a {
+  display: block;
+
+  padding: 12px 5px;
+}
+
+header h2 a:hover {
+  color: #777;
+}
+
+/* ========================================
+   visual
+======================================== */
+
+.visual {
+  width: 100%;
+  max-width: 1920px;
+  height: 750px;
+
+  margin: 13px auto;
+
+  background-image: url(../img/visual.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.visual:hover {
+  background-image: url(../img/visual2.png);
+}
+
+/* ========================================
+   new item
+======================================== */
+
+.container {
+  width: 90%;
+  max-width: 1800px;
+
+  margin: 50px auto;
+}
+
+.new-item {
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-item h2 {
+  font-size: 28px;
+}
+
+.more a {
+  display: block;
+
+  padding: 10px;
+}
+
+.more a:hover {
+  color: #777;
+}
+
+/* product list */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.product-list > li {
+  width: calc((100% - 80px) / 5);
+}
+
+.product-list > li > a {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.product-list img {
+  width: 100%;
+  height: auto;
+}
+
+.product-list p {
+  margin: 10px;
+
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.product-list h3 {
+  margin: 10px;
+
+  font-size: 15px;
+}
+
+.product-list li:hover {
+  opacity: 0.8;
+}
+
+/* ========================================
+   banner
+======================================== */
+
+.banner {
+  width: 90%;
+  max-width: 1800px;
+
+  margin: 70px auto;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   brand stories
+======================================== */
+
+.container2 {
+  width: 90%;
+  max-width: 1800px;
+
+  margin: 0px auto 100px;
+}
+
+.container2 h2 {
+  margin: 70px 0px;
+
+  text-align: center;
+
+  font-size: 28px;
+}
+
+.container2 ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.container2 li {
+  width: calc((100% - 30px) / 4);
+}
+
+.container2 li a {
+  display: block;
+
+  width: 100%;
+}
+
+.container2 img {
+  width: 100%;
+  height: auto;
+}
+
+.container2 li:hover {
+  opacity: 0.8;
+}
+
+/* ========================================
+   HTML/CSS WORKS 복귀
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #000;
+}
+
+/* ========================================
+   tablet
+======================================== */
+
+@media screen and (max-width: 900px) {
+  /* header */
+
+  .header-wrap {
+    width: 92%;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 5px 20px;
+  }
+
+  header h1 {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  header h1 a {
+    display: inline-block;
+  }
+
+  header h2 {
+    font-size: 15px;
+  }
+
+  header h2 a {
+    padding: 10px;
+  }
+
+  /* visual */
+
+  .visual {
+    height: 500px;
+  }
+
+  /* products
+     5열 → 2열
+  */
+
+  .container {
+    width: 88%;
+  }
+
+  .product-list > li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* banner */
+
+  .banner {
+    width: 88%;
+  }
+
+  /* stories
+     4열 → 2열
+  */
+
+  .container2 {
+    width: 88%;
+  }
+
+  .container2 li {
+    width: calc((100% - 10px) / 2);
+  }
+}
+
+/* ========================================
+   mobile
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    border-top-width: 10px;
+  }
+
+  .header-wrap {
+    width: 100%;
+
+    margin-top: 10px;
+
+    gap: 0px;
+  }
+
+  header h1 {
+    margin-bottom: 10px;
+  }
+
+  header img {
+    width: 100px;
+    height: 50px;
+  }
+
+  header h2 {
+    width: 50%;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    letter-spacing: -1px;
+  }
+
+  header h2:last-child {
+    width: 100%;
+  }
+
+  header h2 a {
+    width: 100%;
+
+    padding: 11px 5px;
+  }
+
+  /* visual */
+
+  .visual {
+    height: 280px;
+
+    margin-top: 10px;
+  }
+
+  /* new item */
+
+  .container {
+    width: 88%;
+
+    margin: 40px auto;
+  }
+
+  .new-item {
+    margin-bottom: 20px;
+  }
+
+  .new-item h2 {
+    font-size: 22px;
+  }
+
+  .more {
+    font-size: 12px;
+  }
+
+  /* products
+     2열 → 1열
+  */
+
+  .product-list {
+    display: block;
+  }
+
+  .product-list > li {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  .product-list p {
+    margin: 12px 0px 5px;
+
+    font-size: 14px;
+  }
+
+  .product-list h3 {
+    margin: 5px 0px;
+
+    font-size: 16px;
+  }
+
+  /* banner */
+
+  .banner {
+    width: 100%;
+
+    margin: 50px auto;
+  }
+
+  /* brand stories */
+
+  .container2 {
+    width: 88%;
+
+    margin-bottom: 70px;
+  }
+
+  .container2 h2 {
+    margin: 50px 0px 30px;
+
+    font-size: 22px;
+  }
+
+  .container2 ul {
+    display: block;
+  }
+
+  .container2 li {
+    width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  /* back */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}
