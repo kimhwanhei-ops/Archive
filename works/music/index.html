@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Music</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">BAND</a></li>
+        <li><a href="#">TOUR</a></li>
+        <li><a href="#">CONTACT</a></li>
+
+        <li>
+          <a href="#">
+            MORE
+            <i class="fa-solid fa-caret-down"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mog">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </header>
+
+    <!-- ========================================
+         VISUAL
+    ========================================= -->
+
+    <div id="visual">
+      <img src="img/chicago.jpg" alt="공연 이미지" />
+
+      <div class="visual-text">
+        <h2>Chicago</h2>
+
+        <p>We had the best time playing at Venice Beach!</p>
+      </div>
+    </div>
+
+    <!-- ========================================
+         CONTAINER
+    ========================================= -->
+
+    <div id="container">
+      <!-- ========================================
+           CON01 : BAND
+      ========================================= -->
+
+      <div id="con01">
+        <h2>THE BAND</h2>
+
+        <h3>We love music</h3>
+
+        <p class="band-text">
+          We have created a fictional band website. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+
+        <ul class="member-list">
+          <li>
+            <h4>Name</h4>
+            <img src="img/bandmember.jpg" alt="Band member" />
+          </li>
+
+          <li>
+            <h4>Name</h4>
+            <img src="img/bandmember.jpg" alt="Band member" />
+          </li>
+
+          <li>
+            <h4>Name</h4>
+            <img src="img/bandmember.jpg" alt="Band member" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================================
+           CON02 : TOUR
+      ========================================= -->
+
+      <div id="con02">
+        <div class="tour-inner">
+          <h2>TOUR DATES</h2>
+
+          <h3>Remember to book your tickets!</h3>
+
+          <div class="ul-wrap">
+            <!-- month -->
+
+            <ul class="month">
+              <li>
+                September
+                <div class="sold">Sold out</div>
+              </li>
+
+              <li>
+                October
+                <div class="sold">Sold out</div>
+              </li>
+
+              <li class="nov">
+                November
+                <div class="sam">3</div>
+              </li>
+            </ul>
+
+            <!-- tour cards -->
+
+            <ul class="sell">
+              <li>
+                <img src="img/newyork.jpg" alt="New York" />
+
+                <div class="sell-text">
+                  <h4>New York</h4>
+
+                  <div class="day">Fri 27 Nov 2016</div>
+
+                  <p>
+                    Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                  </p>
+
+                  <div class="buy">
+                    <a href="#">Buy Ticket</a>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <img src="img/paris.jpg" alt="Paris" />
+
+                <div class="sell-text">
+                  <h4>Paris</h4>
+
+                  <div class="day">Sat 28 Nov 2016</div>
+
+                  <p>
+                    Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                  </p>
+
+                  <div class="buy">
+                    <a href="#">Buy Ticket</a>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <img src="img/sanfran.jpg" alt="San Francisco" />
+
+                <div class="sell-text">
+                  <h4>San Francisco</h4>
+
+                  <div class="day">Sun 29 Nov 2016</div>
+
+                  <p>
+                    Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                  </p>
+
+                  <div class="buy">
+                    <a href="#">Buy Ticket</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================
+           CON03 : CONTACT
+      ========================================= -->
+
+      <div id="con03">
+        <div class="contact">
+          <h2>CONTACT</h2>
+
+          <h3>Fan? Drop a note!</h3>
+
+          <div class="ulwrap02">
+            <!-- contact info -->
+
+            <ul class="info">
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                Chicago, US
+              </li>
+
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                Phone: +00 151515
+              </li>
+
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                Email: mail@mail.com
+              </li>
+            </ul>
+
+            <!-- input -->
+
+            <div class="input-wrap">
+              <ul class="back">
+                <li>
+                  <input type="text" placeholder="Name" />
+                </li>
+
+                <li>
+                  <input type="email" placeholder="Email" />
+                </li>
+
+                <li class="hund">
+                  <input type="text" placeholder="Message" />
+                </li>
+              </ul>
+
+              <button class="send" type="button">SEND</button>
+            </div>
+          </div>
+        </div>
+
+        <img class="map" src="img/map.jpg" alt="지도 이미지" />
+      </div>
+    </div>
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-square-snapchat"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div>
+        Powered by
+        <a href="#">w3.css</a>
+      </div>
+    </footer>
+
+    <!-- ========================================
+         PORTFOLIO EXIT
+    ========================================= -->
+
+    <a class="back-works" href="../../works.html"> ← HTML/CSS WORKS </a>
+  </body>
+</html>

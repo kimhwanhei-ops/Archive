@@ -1,0 +1,831 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #000;
+
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #000;
+  color: #fff;
+}
+
+header > ul {
+  height: 100%;
+
+  display: flex;
+}
+
+header > ul > li {
+  height: 100%;
+}
+
+header li a {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0px 22px;
+
+  font-size: 13px;
+}
+
+header li a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+header li i {
+  font-size: 10px;
+}
+
+/* search */
+
+.mog {
+  width: 55px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.mog:hover {
+  background-color: #f44336;
+}
+
+/* ========================================
+   VISUAL
+======================================== */
+
+#visual {
+  width: 100%;
+  max-width: 2000px;
+
+  margin: 0px auto;
+
+  position: relative;
+}
+
+#visual > img {
+  width: 100%;
+  height: auto;
+}
+
+.visual-text {
+  width: 90%;
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  transform: translateX(-50%);
+
+  color: #fff;
+
+  text-align: center;
+}
+
+.visual-text h2 {
+  margin-bottom: 18px;
+
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.visual-text p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ========================================
+   CON01 : BAND
+======================================== */
+
+#con01 {
+  width: 90%;
+  max-width: 800px;
+
+  margin: 0px auto;
+
+  padding: 80px 0px;
+}
+
+#con01 > h2 {
+  margin-bottom: 22px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: normal;
+
+  letter-spacing: 4px;
+}
+
+#con01 > h3 {
+  margin-bottom: 25px;
+
+  color: #777;
+
+  text-align: center;
+
+  font-size: 15px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.band-text {
+  font-size: 14px;
+
+  line-height: 24px;
+
+  text-align: justify;
+}
+
+/* members */
+
+.member-list {
+  margin-top: 55px;
+
+  display: flex;
+
+  gap: 60px;
+}
+
+.member-list li {
+  width: calc((100% - 120px) / 3);
+
+  text-align: center;
+}
+
+.member-list h4 {
+  margin-bottom: 18px;
+
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.member-list img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 4px;
+}
+
+/* ========================================
+   CON02 : TOUR
+======================================== */
+
+#con02 {
+  width: 100%;
+
+  padding: 80px 0px 100px;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.tour-inner {
+  width: 90%;
+  max-width: 800px;
+
+  margin: 0px auto;
+}
+
+#con02 h2 {
+  margin-bottom: 22px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: normal;
+
+  letter-spacing: 4px;
+}
+
+#con02 h3 {
+  margin-bottom: 40px;
+
+  color: #aaa;
+
+  text-align: center;
+
+  font-size: 15px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* month */
+
+.month {
+  margin-bottom: 35px;
+
+  background-color: #fff;
+  color: #777;
+}
+
+.month li {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0px 15px;
+
+  border-bottom: 1px solid #ddd;
+
+  font-size: 14px;
+}
+
+.sold {
+  margin-left: 18px;
+
+  padding: 4px 8px;
+
+  background-color: #f44336;
+  color: #fff;
+
+  font-size: 12px;
+}
+
+.nov {
+  position: relative;
+}
+
+.sam {
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+
+  right: 25px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background-color: #000;
+  color: #fff;
+
+  text-align: center;
+
+  line-height: 25px;
+}
+
+/* ========================================
+   TOUR CARDS
+======================================== */
+
+.sell {
+  display: flex;
+
+  gap: 20px;
+}
+
+.sell > li {
+  width: calc((100% - 40px) / 3);
+
+  background-color: #fff;
+  color: #000;
+}
+
+.sell > li > img {
+  width: 100%;
+  height: auto;
+}
+
+.sell > li > img:hover {
+  filter: brightness(65%);
+}
+
+.sell-text {
+  padding: 18px;
+}
+
+.sell h4 {
+  margin-bottom: 18px;
+
+  font-size: 14px;
+}
+
+.day {
+  margin-bottom: 18px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.sell p {
+  margin-bottom: 18px;
+
+  font-size: 13px;
+
+  line-height: 20px;
+}
+
+.buy {
+  display: inline-block;
+
+  background-color: #000;
+  color: #fff;
+}
+
+.buy a {
+  display: block;
+
+  padding: 10px 14px;
+
+  font-size: 12px;
+}
+
+.buy:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* ========================================
+   CON03 : CONTACT
+======================================== */
+
+#con03 {
+  width: 100%;
+}
+
+.contact {
+  width: 90%;
+  max-width: 800px;
+
+  margin: 0px auto;
+
+  padding: 80px 0px;
+}
+
+.contact > h2 {
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: normal;
+
+  letter-spacing: 4px;
+}
+
+.contact > h3 {
+  margin-bottom: 45px;
+
+  color: #777;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* contact layout */
+
+.ulwrap02 {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+/* info */
+
+.info {
+  width: calc(40% - 20px);
+}
+
+.info li {
+  margin-bottom: 12px;
+
+  font-size: 16px;
+}
+
+.info i {
+  width: 30px;
+
+  font-size: 16px;
+}
+
+/* input */
+
+.input-wrap {
+  width: calc(60% - 20px);
+}
+
+.back {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.back li {
+  width: calc((100% - 10px) / 2);
+}
+
+.back .hund {
+  width: 100%;
+}
+
+.back input {
+  width: 100%;
+  height: 42px;
+
+  padding: 0px 10px;
+
+  border: 1px solid #ccc;
+
+  font-size: 13px;
+}
+
+.send {
+  display: block;
+
+  margin: 15px 0px 0px auto;
+
+  padding: 11px 17px;
+
+  border: none;
+
+  background-color: #000;
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.send:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* map */
+
+.map {
+  width: 100%;
+  height: auto;
+
+  filter: grayscale(50%);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  width: 100%;
+
+  padding: 70px 20px;
+
+  color: #777;
+
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+}
+
+footer ul a {
+  display: block;
+
+  font-size: 22px;
+}
+
+footer ul a:hover {
+  color: #aaa;
+}
+
+footer > div {
+  font-size: 13px;
+}
+
+footer > div a {
+  margin-left: 4px;
+
+  text-decoration: underline;
+}
+
+/* ========================================
+   HTML/CSS WORKS BACK
+======================================== */
+
+.back-works {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #fff;
+
+  background-color: #000;
+  color: #fff;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  z-index: 9999;
+}
+
+.back-works:hover {
+  border-color: #000;
+
+  background-color: #fff;
+  color: #000;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media screen and (max-width: 900px) {
+  /* header */
+
+  header li a {
+    padding: 0px 13px;
+
+    font-size: 11px;
+  }
+
+  /* visual */
+
+  .visual-text {
+    bottom: 25px;
+  }
+
+  /* band */
+
+  #con01,
+  .tour-inner,
+  .contact {
+    width: 88%;
+  }
+
+  .member-list {
+    gap: 30px;
+  }
+
+  .member-list li {
+    width: calc((100% - 60px) / 3);
+  }
+
+  /* tour */
+
+  .sell {
+    flex-wrap: wrap;
+  }
+
+  .sell > li {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* contact */
+
+  .ulwrap02 {
+    gap: 30px;
+  }
+
+  .info {
+    width: calc(42% - 15px);
+  }
+
+  .input-wrap {
+    width: calc(58% - 15px);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    height: auto;
+
+    display: block;
+  }
+
+  header > ul {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header > ul > li {
+    width: 50%;
+    height: auto;
+
+    text-align: center;
+  }
+
+  header > ul > li:last-child {
+    width: 100%;
+  }
+
+  header li a {
+    width: 100%;
+    height: auto;
+
+    justify-content: center;
+
+    padding: 13px 5px;
+
+    font-size: 10px;
+  }
+
+  .mog {
+    display: none;
+  }
+
+  /* visual */
+
+  .visual-text {
+    bottom: 15px;
+  }
+
+  .visual-text h2 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+  }
+
+  .visual-text p {
+    font-size: 10px;
+  }
+
+  /* band */
+
+  #con01 {
+    width: 88%;
+
+    padding: 60px 0px;
+  }
+
+  #con01 > h2 {
+    font-size: 24px;
+  }
+
+  .band-text {
+    font-size: 13px;
+
+    line-height: 22px;
+
+    text-align: left;
+  }
+
+  .member-list {
+    display: block;
+
+    margin-top: 40px;
+  }
+
+  .member-list li {
+    width: 75%;
+
+    margin: 0px auto 35px;
+  }
+
+  /* tour */
+
+  #con02 {
+    padding: 60px 0px 75px;
+  }
+
+  .tour-inner {
+    width: 88%;
+  }
+
+  #con02 h2 {
+    font-size: 24px;
+  }
+
+  .sell {
+    display: block;
+  }
+
+  .sell > li {
+    width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  /* contact */
+
+  .contact {
+    width: 88%;
+
+    padding: 60px 0px;
+  }
+
+  .contact > h2 {
+    font-size: 24px;
+  }
+
+  .ulwrap02 {
+    display: block;
+  }
+
+  .info {
+    width: 100%;
+
+    margin-bottom: 35px;
+  }
+
+  .info li {
+    font-size: 14px;
+  }
+
+  .input-wrap {
+    width: 100%;
+  }
+
+  .back {
+    display: block;
+  }
+
+  .back li,
+  .back .hund {
+    width: 100%;
+
+    margin-bottom: 10px;
+  }
+
+  .send {
+    margin-top: 5px;
+  }
+
+  /* footer */
+
+  footer {
+    padding: 50px 20px 80px;
+  }
+
+  /* back */
+
+  .back-works {
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+
+    font-size: 9px;
+  }
+}
