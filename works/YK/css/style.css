@@ -88,20 +88,33 @@ header > div {
   text-align: center;
   justify-content: center;
   display: flex;
-  width: 100%;
+  width: 82%;
+  margin: 0px auto;
 }
 #con01 ul {
+  height: 200px;
+  margin-top: 30px;
   width: calc(100% / 2);
   display: flex;
+  gap: 20px;
 }
 #con01 ul li {
-  width: calc(100% / 3);
+  width: calc((100% - 40px) / 3);
 }
 #con01 img {
+  display: block;
   width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+#con01 img:hover {
+  transform: scale(1.2);
 }
 #con01 .gong > li {
   position: relative;
+  overflow: hidden;
+  border-radius: 20px;
 }
 #con01 .gong h3 {
   color: #fff;
@@ -109,4 +122,228 @@ header > div {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+#con01 .goo p {
+  font-size: 17px;
+  font-weight: bold;
+  color: blue;
+}
+#con01 .goo h2 {
+  font-size: 20px;
+}
+#con01 .goo li p:last-child {
+  font-size: 30px;
+  margin-top: 20px;
+  color: #000;
+}
+#con02 {
+  width: 100%;
+
+  padding: 60px 0px;
+
+  background-color: #f5f5f5;
+}
+
+#con02 .center-inner {
+  width: 90%;
+  max-width: 1500px;
+
+  margin: 0px auto;
+}
+
+#con02 h2 {
+  margin-bottom: 30px;
+
+  font-size: 30px;
+  font-weight: normal;
+}
+
+/* con02 */
+
+#con02 .center-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 30px;
+}
+
+#con02 .center-list li {
+  width: calc((100% - 60px) / 3);
+  border-bottom: 1px solid #ddd;
+}
+
+#con02 .center-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#con02 .center-list li a:hover {
+  color: blue;
+}
+
+#con02 .center-banner {
+  width: 98%;
+  height: 190px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+
+  background-image: url(../img/counselBackground.webp);
+
+  color: #fff;
+}
+
+#con02 .center-banner h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#con02 .center-banner p {
+  margin-bottom: 22px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#con02 .center-banner a {
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#con02 .center-banner a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+#con02 .center-banner a span {
+  font-size: 22px;
+}
+
+/* con03 */
+
+#con03 {
+  width: 100%;
+  padding: 70px 0px 80px;
+  background-color: #fff;
+}
+
+#con03 .member-inner {
+  width: 90%;
+  margin: 0px auto;
+}
+
+#con03 .member-list {
+  display: flex;
+  gap: 40px;
+}
+
+#con03 .member-list > li {
+  width: calc((100% - 40px) / 2);
+  border-radius: 12px;
+  background-color: #f4f5f5;
+}
+
+#con03 .member-img {
+  width: 100%;
+  position: relative;
+  border-radius: 12px 12px 0px 0px;
+}
+
+#con03 .member-img img {
+  height: 200px;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+#con03 .new {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  padding: 10px 15px;
+  border-radius: 0px 0px 6px 6px;
+  background-color: #263fd4;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#con03 .member-text {
+  padding: 25px 25px 22px;
+}
+
+#con03 .member-text h4 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#con03 .member-text h3 {
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 22px;
+}
+
+#con03 .member-text h3 span {
+  font-size: 17px;
+  font-weight: normal;
+}
+
+#con03 .member-text h3 a {
+  margin-left: 8px;
+  color: #777;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#con03 .member-text p {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+#con03 .more {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #081c6d;
+  font-weight: bold;
+}
+
+#con03 .more span {
+  font-size: 20px;
+}
+
+#con03 .member-more {
+  width: 220px;
+  margin: 70px auto;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 50px;
+  background-color: #132b78;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#con03 .member-more:hover {
+  background-color: #0a1b55;
 }
