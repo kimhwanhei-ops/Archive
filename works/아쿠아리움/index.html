@@ -3,13 +3,407 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>아쿠아리움</title>
+
+    <title>OCEAN AQUARIUM</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
     <script src="js/jquery-4.0.0.min.js"></script>
   </head>
+
   <body>
-<header>
+    <!-- header -->
 
-</header>
+    <header>
+      <h1>
+        <a href="#visual">OCEAN AQUARIUM</a>
+      </h1>
 
+      <ul class="gnb">
+        <li><a href="#con01"> </a></li>
+        <li><a href="#con02"></a></li>
+        <li><a href="#"> </a></li>
+      </ul>
+
+      <div class="header-icon">
+        <a href="#" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="#" class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+
+      <!-- search -->
+
+      <div class="search-panel">
+        <div class="search-inner">
+          <div class="search-box">
+            <input type="text" placeholder="무엇을 찾고 계신가요?" />
+
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+
+          <div class="search-menu">
+            <p>QUICK SEARCH</p>
+
+            <ul>
+              <li><a href="#">전시생물</a></li>
+              <li><a href="#">운영시간</a></li>
+              <li><a href="#">이용요금</a></li>
+              <li><a href="#">체험프로그램</a></li>
+              <li><a href="#">오시는 길</a></li>
+            </ul>
+          </div>
+
+          <a href="#" class="search-close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- menu -->
+
+      <div class="menu-panel">
+        <div class="menu-inner">
+          <div>
+            <p>GUIDE</p>
+
+            <a href="#con03">
+              <strong>이용안내</strong>
+              <span>아쿠아리움 이용에 필요한 정보를 확인하세요.</span>
+            </a>
+          </div>
+
+          <div>
+            <p>INFORMATION</p>
+
+            <ul>
+              <li><a href="#">관람정보</a></li>
+              <li><a href="#">할인안내</a></li>
+              <li><a href="#">시설안내</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p>VISIT</p>
+
+            <ul>
+              <li><a href="#">오시는 길</a></li>
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">공지사항</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- visual -->
+
+    <section id="visual">
+      <div
+        class="visual-slide"
+        style="background-image: url(img/visual.png)"
+      ></div>
+
+      <div
+        class="visual-slide"
+        style="background-image: url(img/con01img1.png)"
+      ></div>
+
+      <div
+        class="visual-slide"
+        style="background-image: url(img/con02img3.png)"
+      ></div>
+
+      <a href="#con01" class="visual-btn">
+        지금 만나보세요
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+
+      <div class="visual-dots">
+        <button class="visual-dot on"></button>
+        <button class="visual-dot"></button>
+        <button class="visual-dot"></button>
+      </div>
+    </section>
+
+    <!-- container -->
+
+    <main id="container">
+      <!-- con01 -->
+
+      <section id="con01">
+        <p class="sub">AQUARIUM EXPERIENCE</p>
+
+        <h2>MEET THE OCEAN</h2>
+
+        <p class="desc">바다의 속삭임, 특별한 만남이 시작됩니다.</p>
+
+        <div class="animal-wrap">
+          <a href="#" class="animal whale">
+            <img src="img/con01img1.png" alt="고래상어" />
+
+            <div class="animal-text">
+              <h3>고래상어</h3>
+              <p>바다의 온순한 거인</p>
+
+              <span>
+                거대한 몸속에 담긴 신비로운 생태와<br />
+                바다의 경이로움을 만나보세요.
+              </span>
+            </div>
+
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+
+          <div class="animal-side">
+            <a href="#" class="animal">
+              <img src="img/con01img2.png" alt="벨루가" />
+
+              <div class="animal-text">
+                <h3>벨루가</h3>
+                <p>바다의 미소</p>
+
+                <span>
+                  사랑스러운 벨루가와<br />
+                  교감하는 특별한 순간.
+                </span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+
+            <a href="#" class="animal">
+              <img src="img/con01img3.png" alt="만타가오리" />
+
+              <div class="animal-text">
+                <h3>만타가오리</h3>
+                <p>하늘을 나는 바다 친구</p>
+
+                <span>
+                  우아한 움직임 속에<br />
+                  숨겨진 놀라운 이야기를 만나보세요.
+                </span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- con02 -->
+
+      <section id="con02">
+        <ul>
+          <li>
+            <a href="#">
+              <img src="img/con02img1.png" alt="돌고래 광장" />
+
+              <div class="con02-text">
+                <h3>돌고래 광장</h3>
+                <p>더 알아보기</p>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="img/con02img2.png" alt="산호초존" />
+
+              <div class="con02-text">
+                <h3>산호초존</h3>
+                <p>더 알아보기</p>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="img/con02img3.png" alt="대형 수조관" />
+
+              <div class="con02-text">
+                <h3>대형 수족관</h3>
+                <p>더 알아보기</p>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="img/con02img4.png" alt="터치풀" />
+
+              <div class="con02-text">
+                <h3>터치풀</h3>
+                <p>더 알아보기</p>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="img/con02img5.png" alt="해양 공연" />
+
+              <div class="con02-text">
+                <h3>해양 공연</h3>
+                <p>더 알아보기</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- con03 -->
+
+      <section id="con03">
+        <div class="quick">
+          <div class="welcome">
+            <i class="fa-solid fa-otter"></i>
+
+            <p>
+              <strong>WELCOME</strong>
+              아쿠아리움에<br />
+              오신 것을 환영합니다!
+            </p>
+          </div>
+
+          <ul>
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <p>이용안내</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-regular fa-clock"></i>
+                </span>
+
+                <p>관람정보</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-tags"></i>
+                </span>
+
+                <p>할인안내</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-regular fa-building"></i>
+                </span>
+
+                <p>시설안내</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+
+                <p>오시는 길</p>
+              </a>
+            </li>
+          </ul>
+
+          <a href="#" class="quick-next">
+            <i class="fa-solid fa-angle-right"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let visualIndex = 0;
+      let visualCount = $(".visual-slide").length;
+
+      function visualChange(index) {
+        $(".visual-slide")
+          .eq(index)
+          .stop(true, true)
+          .fadeIn(800)
+          .siblings(".visual-slide")
+          .stop(true, true)
+          .fadeOut(800);
+
+        $(".visual-dot").removeClass("on");
+        $(".visual-dot").eq(index).addClass("on");
+      }
+
+      setInterval(function () {
+        visualIndex++;
+
+        if (visualIndex >= visualCount) {
+          visualIndex = 0;
+        }
+
+        visualChange(visualIndex);
+      }, 5000);
+
+      $(".visual-dot").on("click", function () {
+        visualIndex = $(this).index();
+
+        visualChange(visualIndex);
+      });
+
+      $(".search-btn").on("click", function (e) {
+        e.preventDefault();
+
+        $(".menu-panel").stop(true, true).slideUp(250);
+        $(".search-panel").stop(true, true).slideToggle(350);
+      });
+
+      $(".search-close").on("click", function (e) {
+        e.preventDefault();
+
+        $(".search-panel").stop(true, true).slideUp(300);
+      });
+
+      $(".menu-btn").on("click", function (e) {
+        e.preventDefault();
+
+        $(".search-panel").stop(true, true).slideUp(250);
+        $(".menu-panel").stop(true, true).slideToggle(350);
+      });
+
+      $(".menu-panel a").on("click", function () {
+        $(".menu-panel").stop(true, true).slideUp(250);
+      });
+
+      $(window).on("scroll", function () {
+        let sc = $(this).scrollTop();
+
+        if (sc >= 100) {
+          $("header").addClass("hide");
+
+          $(".search-panel").stop(true, true).slideUp(200);
+          $(".menu-panel").stop(true, true).slideUp(200);
+        } else {
+          $("header").removeClass("hide");
+        }
+      });
+    </script>
   </body>
 </html>
