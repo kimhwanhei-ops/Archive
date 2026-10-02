@@ -18,6 +18,8 @@ $(function () {
     $(".visual-dot").eq(index).addClass("on");
   }
 
+  /* visual auto */
+
   setInterval(function () {
     visualIndex++;
 
@@ -27,6 +29,8 @@ $(function () {
 
     visualChange(visualIndex);
   }, 5000);
+
+  /* visual dot */
 
   $(".visual-dot").on("click", function () {
     visualIndex = $(this).index();
@@ -65,10 +69,12 @@ $(function () {
   /* con02 */
 
   $("#con02 li").on("mouseenter", function () {
-    $("#con02 li").removeClass("active dim");
+    if ($(window).width() > 768) {
+      $("#con02 li").removeClass("active dim");
 
-    $(this).addClass("active");
-    $(this).siblings().addClass("dim");
+      $(this).addClass("active");
+      $(this).siblings().addClass("dim");
+    }
   });
 
   $("#con02 ul").on("mouseleave", function () {
@@ -140,9 +146,15 @@ $(function () {
     });
   });
 
-  /* visual scroll */
+  /* visual scroll
+     PC에서만 실행
+     태블릿 / 모바일에서는 기본 스크롤 사용 */
 
   $(window).on("wheel", function (e) {
+    if ($(window).width() <= 1199) {
+      return;
+    }
+
     let sc = $(window).scrollTop();
     let con01Top = $("#con01").offset().top;
     let wheel = e.originalEvent.deltaY;
@@ -186,6 +198,14 @@ $(function () {
             wheelLock = false;
           },
         );
+    }
+  });
+
+  /* resize */
+
+  $(window).on("resize", function () {
+    if ($(window).width() <= 768) {
+      $("#con02 li").removeClass("active dim");
     }
   });
 
