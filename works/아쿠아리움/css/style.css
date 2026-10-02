@@ -957,16 +957,22 @@ header .header-icon a {
   width: 100%;
   height: 100%;
 
+  overflow: hidden;
+
   background-color: rgba(85, 173, 220, 0.22);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#con04 .education-card .photo img {
+  width: 100%;
+  height: 100%;
 
-  color: rgba(22, 94, 145, 0.45);
+  object-fit: cover;
 
-  font-size: 11px;
-  letter-spacing: 2px;
+  transition: 0.5s;
+}
+
+#con04 .education-card:hover .photo img {
+  transform: scale(1.05);
 }
 
 #con04 .education-text {
@@ -1032,6 +1038,8 @@ header .header-icon a {
   gap: 45px;
 }
 
+/* map */
+
 #con05 .map-area {
   position: relative;
 
@@ -1041,82 +1049,109 @@ header .header-icon a {
 
   border-radius: 20px;
 
-  box-shadow: 0px 12px 30px rgba(0, 73, 120, 0.12);
+  background-color: #064c78;
+
+  box-shadow: 0px 12px 30px rgba(0, 73, 120, 0.15);
 }
 
 #con05 .map-area > .photo {
   width: 100%;
   height: 100%;
-
-  background-color: rgba(72, 160, 210, 0.24);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: rgba(22, 94, 145, 0.45);
-
-  font-size: 12px;
-  letter-spacing: 3px;
 }
+
+#con05 .map-area > .photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: 0.6s;
+}
+
+#con05 .map-area::after {
+  content: "";
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 40, 75, 0.08),
+    rgba(0, 42, 75, 0.32)
+  );
+
+  pointer-events: none;
+}
+
+#con05 .map-area:hover > .photo img {
+  transform: scale(1.025);
+}
+
+/* map location */
 
 #con05 .map-point {
   position: absolute;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  z-index: 3;
 
-  gap: 5px;
+  padding: 6px 11px;
 
-  color: #174e84;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 100px;
+
+  background-color: rgba(0, 49, 85, 0.72);
+  color: #fff;
+
+  box-shadow: 0px 4px 12px rgba(0, 30, 60, 0.18);
 
   font-size: 11px;
   font-weight: bold;
-}
 
-#con05 .map-point i {
-  width: 45px;
-  height: 45px;
-
-  border-radius: 50%;
-
-  background-color: #fff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0px 5px 15px rgba(0, 67, 110, 0.18);
-
-  color: #2472c9;
-
-  font-size: 18px;
+  white-space: nowrap;
 
   transition: 0.3s;
 }
 
-#con05 .map-point:hover i {
-  transform: translateY(-4px);
+#con05 .map-point:hover {
+  transform: translateY(-3px);
 
-  background-color: #2472c9;
-  color: #fff;
+  background-color: #fff;
+  color: #145f98;
 }
 
 #con05 .point01 {
-  left: 25%;
-  top: 38%;
+  left: 8%;
+  top: 23%;
 }
 
 #con05 .point02 {
-  right: 22%;
-  top: 27%;
+  left: 25%;
+  top: 35%;
 }
 
 #con05 .point03 {
-  left: 43%;
-  bottom: 17%;
+  right: 16%;
+  top: 22%;
 }
+
+#con05 .point04 {
+  left: 48%;
+  top: 49%;
+}
+
+#con05 .point05 {
+  left: 29%;
+  bottom: 19%;
+}
+
+/* info */
 
 #con05 .info-area {
   padding-left: 5px;
@@ -1164,16 +1199,19 @@ header .header-icon a {
   overflow: hidden;
 
   border-radius: 10px;
+}
 
-  background-color: rgba(72, 160, 210, 0.22);
+#con05 .thumb img {
+  width: 100%;
+  height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover;
 
-  color: rgba(22, 94, 145, 0.45);
+  transition: 0.4s;
+}
 
-  font-size: 9px;
+#con05 .info-area li:hover .thumb img {
+  transform: scale(1.07);
 }
 
 #con05 .info-text h3 {
@@ -1204,19 +1242,13 @@ header .header-icon a {
   line-height: 30px;
 
   font-size: 11px;
+
+  transition: 0.3s;
 }
 
-/* image */
-
-#con04 .photo img,
-#con05 .photo img,
-#con05 .thumb img,
-#con06 .photo img,
-#banner .banner-photo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+#con05 .info-area li:hover > a > i {
+  background-color: #2472c9;
+  color: #fff;
 }
 
 /* banner */
@@ -1256,18 +1288,21 @@ header .header-icon a {
   width: 100%;
   height: 100%;
 
-  padding-right: 80px;
+  overflow: hidden;
+}
 
-  background: linear-gradient(100deg, #06477a 0%, #0b6397 45%, #4aa9c8 100%);
+#banner .banner-photo img {
+  width: 100%;
+  height: 100%;
 
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  object-fit: cover;
+  object-position: center 50%;
 
-  color: rgba(255, 255, 255, 0.3);
+  transition: 0.8s;
+}
 
-  font-size: 12px;
-  letter-spacing: 3px;
+#banner > a:hover .banner-photo img {
+  transform: scale(1.025);
 }
 
 #banner .banner-photo::after {
@@ -1277,14 +1312,17 @@ header .header-icon a {
   left: 0px;
   top: 0px;
 
-  width: 70%;
+  width: 72%;
   height: 100%;
 
   background: linear-gradient(
     to right,
-    rgba(0, 39, 78, 0.95),
-    rgba(0, 39, 78, 0)
+    rgba(0, 39, 78, 0.92) 0%,
+    rgba(0, 39, 78, 0.55) 45%,
+    rgba(0, 39, 78, 0) 100%
   );
+
+  pointer-events: none;
 }
 
 #banner .banner-text {
@@ -1315,7 +1353,7 @@ header .header-icon a {
 #banner .banner-text > span {
   font-size: 12px;
 
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 #banner .banner-more {
@@ -1421,35 +1459,50 @@ header .header-icon a {
   grid-template-columns: repeat(6, 1fr);
 
   gap: 10px;
+
+  align-items: center;
 }
 
 #con06 .sns-card {
   position: relative;
 
-  height: 150px;
+  aspect-ratio: 1 / 1;
 
   overflow: hidden;
 
   border-radius: 12px;
 
   background-color: rgba(72, 160, 210, 0.22);
+
+  transition: 0.3s;
 }
 
 #con06 .sns-card .photo {
   width: 100%;
   height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 
-  color: rgba(22, 94, 145, 0.4);
+  background-color: rgba(72, 160, 210, 0.12);
+}
 
-  font-size: 9px;
+#con06 .sns-card .photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+#con06 .sns-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0px 10px 22px rgba(0, 73, 120, 0.15);
 }
 
 #con06 .sns-card > i {
   position: absolute;
+
   left: 10px;
   top: 10px;
 
@@ -1466,6 +1519,7 @@ header .header-icon a {
   content: "";
 
   position: absolute;
+
   left: 0px;
   top: 0px;
 
@@ -1473,6 +1527,8 @@ header .header-icon a {
   height: 100%;
 
   background-color: rgba(0, 70, 115, 0);
+
+  pointer-events: none;
 
   transition: 0.3s;
 }
@@ -1592,6 +1648,7 @@ footer .copyright {
 
 .top-btn {
   position: fixed;
+
   right: 30px;
   bottom: 30px;
 
