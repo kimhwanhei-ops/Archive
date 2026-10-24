@@ -6,62 +6,177 @@
     <meta name="theme-color" content="#182d37" />
     <title>딤딤섬 포지션 | 근무 배치 보드</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
   <body>
     <header class="topbar">
       <div class="topbar-inner">
-        <div class="brand"><span class="brand-mark">DD</span><div><strong>딤딤섬 포지션</strong><small>SHIFT · ROLE PLANNER</small></div></div>
+        <div class="brand">
+          <span class="brand-mark">DD</span>
+          <div>
+            <strong>딤딤섬 포지션</strong>
+            <small>SHIFT · ROLE PLANNER</small>
+          </div>
+        </div>
         <button id="exportBtn" class="btn btn-outline" type="button">포지션 텍스트 복사</button>
       </div>
     </header>
 
     <main class="app-shell">
       <section class="intro">
-        <div><p class="eyebrow">매장 운영 · 직원별 포지션 관리</p><h1>오늘 누가, 어디에 서야 할까요?</h1><p class="intro-desc">스케줄을 확인하고, 직원을 눌러 오전·오후 포지션을 배치하세요. 빽바·포장은 마지막 담당 이력을 비교합니다.</p></div>
+        <div>
+          <p class="eyebrow">매장 운영 · 직원별 포지션 관리</p>
+          <h1>오늘 누가, 어디에 서야 할까요?</h1>
+          <p class="intro-desc">스케줄을 확인하고, 직원을 눌러 오전·오후 포지션을 배치하세요. 빽바·포장은 마지막 담당 이력을 비교합니다.</p>
+        </div>
         <div class="context-label"><span class="live-dot"></span> 브라우저에 자동 저장</div>
       </section>
 
       <section class="controls card" aria-label="근무일과 시간대 선택">
-        <div class="section-row"><div><h2>근무일 선택</h2><p class="subtle">2026년 10월 20~25일 · 사진을 기준으로 입력한 초안입니다</p></div><button class="text-btn" id="resetBtn" type="button">초안 초기화</button></div>
+        <div class="section-row">
+          <div>
+            <h2>근무일 선택</h2>
+            <p class="subtle">2026년 10월 20~25일 · 사진을 기준으로 입력한 초안입니다</p>
+          </div>
+          <button class="text-btn" id="resetBtn" type="button">초안 초기화</button>
+        </div>
         <div class="date-strip" id="dateTabs" role="group" aria-label="근무일"></div>
-        <div class="control-bottom"><div class="period-switch" role="group" aria-label="시간대"><button type="button" data-period="am">오전 배치 <small>09:30~15:00</small></button><button type="button" data-period="pm">오후 배치 <small>15:00~22:00</small></button></div><div class="small-note" id="dayNote"></div></div>
+        <div class="control-bottom">
+          <div class="period-switch" role="group" aria-label="시간대">
+            <button type="button" data-period="am">오전 배치 <small>09:30~16:00</small></button>
+            <button type="button" data-period="pm">오후 배치 <small>16:00~21:30 / 정직원 ~22:00</small></button>
+          </div>
+          <div class="small-note" id="dayNote"></div>
+        </div>
+      </section>
+
+      <section class="card visual-schedule" aria-label="원본 스케줄 사진">
+        <div class="section-row">
+          <div>
+            <h2>원본 스케줄 사진</h2>
+            <p class="subtle">현재 선택한 날짜의 스케줄 사진을 웹 안에서 바로 확인합니다. 비율은 유지하고 너무 크게 늘리지 않습니다.</p>
+          </div>
+          <span class="tiny-pill" id="scheduleImageLabel">스케줄 사진</span>
+        </div>
+        <div class="schedule-hero">
+          <div class="schedule-frame">
+            <img id="schedulePreviewImage" src="" alt="선택한 날짜의 스케줄 사진" />
+          </div>
+        </div>
       </section>
 
       <div class="stat-grid" id="stats" aria-label="근무 현황"></div>
 
-      <div class="tab-switch" role="group" aria-label="화면 선택"><button id="tabAssign" class="active" type="button">포지션 배치</button><button id="tabSchedule" type="button">시간대별 근무표</button></div>
+      <section class="card result-section" aria-label="출력용 배치표">
+        <div class="section-row result-head">
+          <div>
+            <h2>캡처용 결과 만들기</h2>
+            <p class="subtle">배치가 끝나면 보기 좋게 정리된 카드형 결과를 만들고, JPG로 저장해 단톡방에 공유할 수 있습니다.</p>
+          </div>
+          <div class="result-actions">
+            <button id="buildResultBtn" class="btn btn-primary" type="button">배치표 만들기</button>
+            <button id="downloadJpgBtn" class="btn btn-secondary" type="button">JPG 저장하기</button>
+          </div>
+        </div>
+        <div id="resultEmpty" class="result-empty">아직 출력용 배치표를 만들지 않았습니다. <strong>배치표 만들기</strong>를 누르면 현재 날짜 기준으로 캡처용 카드가 생성됩니다.</div>
+        <div id="captureTarget" class="capture-board" hidden></div>
+      </section>
+
+      <div class="tab-switch" role="group" aria-label="화면 선택">
+        <button id="tabAssign" class="active" type="button">포지션 배치</button>
+        <button id="tabSchedule" type="button">시간대별 근무표</button>
+      </div>
 
       <section id="assignView" class="main-grid">
         <div class="staff-section card">
-          <div class="section-row"><div><h2>직원 선택</h2><p class="subtle">이름 클릭 → 포지션 선택 → 배치 완료</p></div><span class="tiny-pill" id="poolCount"></span></div>
-          <div class="search-row"><input id="staffSearch" type="search" placeholder="직원 이름 검색" aria-label="직원 이름 검색" /><label class="toggle"><input type="checkbox" id="fullOnly" /> 근무시간 넉넉한 직원만</label></div>
+          <div class="section-row">
+            <div>
+              <h2>직원 선택</h2>
+              <p class="subtle">이름 클릭 → 포지션 선택 → 배치 완료</p>
+            </div>
+            <span class="tiny-pill" id="poolCount"></span>
+          </div>
+          <div class="search-row">
+            <input id="staffSearch" type="search" placeholder="직원 이름 검색" aria-label="직원 이름 검색" />
+            <label class="toggle"><input type="checkbox" id="fullOnly" /> 근무시간 넉넉한 직원만</label>
+          </div>
           <div id="staffPool" class="staff-pool"></div>
-          <div class="legend-inline"><span><i class="dot-work"></i> 근무</span><span><i class="dot-break"></i> 식사</span><span><i class="dot-30"></i> 30분 연장</span><span><i class="dot-60"></i> 1시간 연장</span><span><i class="dot-train"></i> 신입 클세</span></div>
+          <div class="legend-inline">
+            <span><i class="dot-work"></i> 근무</span>
+            <span><i class="dot-break"></i> 식사</span>
+            <span><i class="dot-30"></i> 30분 근무</span>
+            <span><i class="dot-60"></i> 1시간 연장</span>
+            <span><i class="dot-train"></i> 신입 클세</span>
+          </div>
         </div>
 
         <div class="position-section card">
-          <div class="section-row"><div><h2>포지션 현황</h2><p class="subtle">각 포지션의 ‘추천 보기’를 누르면 적합한 순서로 정렬합니다.</p></div><button id="clearPeriodBtn" type="button" class="text-btn">이 시간대 배치 비우기</button></div>
+          <div class="section-row">
+            <div>
+              <h2>포지션 현황</h2>
+              <p class="subtle">각 포지션의 ‘추천 보기’를 누르면 적합한 순서로 정렬합니다.</p>
+            </div>
+            <button id="clearPeriodBtn" type="button" class="text-btn">이 시간대 배치 비우기</button>
+          </div>
           <div id="positions" class="positions"></div>
-          <div class="notice">근무자 1명은 같은 시간대에 한 포지션만 배치됩니다. <strong>식사시간은 근무 가능 시간에서 제외</strong>됩니다. 오전·오후 내 시간별 세부 배치는 다음 단계에서 확장할 수 있습니다.</div>
+          <div class="notice">근무자 1명은 같은 시간대에 한 포지션만 배치됩니다. <strong>카운터는 정직원만 배치</strong>할 수 있고, 식사시간은 근무 가능 시간에서 제외합니다. 기준: 오전 09:30~16:00 / 오후 16:00~21:30(정직원은 최대 22:00). 시간별 세부 배치는 다음 단계에서 확장할 수 있습니다.</div>
         </div>
       </section>
 
       <section id="scheduleView" class="card schedule-section" hidden>
-        <div class="section-row"><div><h2>시간대별 근무표</h2><p class="subtle">가로로 밀어 전체 시간을 확인하세요. ‘근무표 편집’을 켜고 칸을 누르면 상태를 변경할 수 있습니다.</p></div><label class="toggle"><input type="checkbox" id="editSchedule" /> 근무표 편집</label></div>
-        <div class="legend-inline legend-schedule"><span><i class="dot-work"></i> 근무</span><span><i class="dot-break"></i> 식사</span><span><i class="dot-30"></i> 30분 연장</span><span><i class="dot-60"></i> 1시간 연장</span><span><i class="dot-train"></i> 신입 클세</span><span><i class="dot-off"></i> 비근무</span></div>
+        <div class="section-row">
+          <div>
+            <h2>시간대별 근무표</h2>
+            <p class="subtle">가로로 밀어 전체 시간을 확인하세요. 정직원 위 / 파트타임 아래로 표시합니다. ‘근무표 편집’을 켜고 칸을 누르면 상태를 변경할 수 있습니다.</p>
+          </div>
+          <label class="toggle"><input type="checkbox" id="editSchedule" /> 근무표 편집</label>
+        </div>
+        <div class="legend-inline legend-schedule">
+          <span><i class="dot-work"></i> 근무</span>
+          <span><i class="dot-break"></i> 식사</span>
+          <span><i class="dot-30"></i> 30분 근무</span>
+          <span><i class="dot-60"></i> 1시간 연장</span>
+          <span><i class="dot-train"></i> 신입 클세</span>
+          <span><i class="dot-off"></i> 비근무</span>
+        </div>
         <div class="table-scroll"><table id="scheduleTable"><thead></thead><tbody></tbody></table></div>
-        <p class="subtle small-table-tip">편집 모드에서 칸을 누를 때마다 비근무 → 근무 → 식사 → 30분 연장 → 1시간 연장 → 신입 클세 → 비근무 순으로 바뀝니다. 사진에 명확히 표시된 색상만 입력했으므로 반드시 원본과 대조해 주세요.</p>
+        <p class="subtle small-table-tip">편집 모드에서 칸을 누를 때마다 비근무 → 근무 → 식사 → 30분 근무 → 1시간 연장 → 신입 클세 → 비근무 순으로 바뀝니다. 노란색은 해당 시간 칸의 후반 30분 근무(예: 11~12시 칸은 11:30~12:00)이며 연장이 아닙니다. 사진에 명확히 표시된 색상만 입력했으므로 반드시 원본과 대조해 주세요.</p>
       </section>
 
-      <section class="history-card card"><div class="section-row"><div><h2>빽바·포장 마지막 담당 기록</h2><p class="subtle">10월 19~21일 실제 배치 기록을 기본값으로 사용합니다. 누락된 이전 기록은 직접 추가할 수 있습니다.</p></div></div><div id="historyBoard" class="history-grid"></div><div class="history-form"><label>직원<select id="historyStaff"></select></label><label>포지션<select id="historyRole"><option value="backbar">빽바</option><option value="packing">포장</option></select></label><label>마지막 수행일<input type="date" id="historyDate" value="2026-10-18" /></label><label>시간대<select id="historyPeriod"><option value="am">오전</option><option value="pm">오후</option></select></label><button id="historySaveBtn" type="button" class="btn btn-primary">이력 추가</button></div><p class="history-note">‘기록 없음’은 한 번도 하지 않았다는 뜻이 아니라 <strong>현재 입력된 이력으로 확인할 수 없다는 뜻</strong>입니다. 같은 날짜라면 오전 기록을 오후 기록보다 오래된 것으로 계산합니다.</p></section>
+      <section class="history-card card">
+        <div class="section-row">
+          <div>
+            <h2>빽바·포장 마지막 담당 기록</h2>
+            <p class="subtle">10월 19~21일 실제 배치 기록을 기본값으로 사용합니다. 누락된 이전 기록은 직접 추가할 수 있습니다.</p>
+          </div>
+        </div>
+        <div id="historyBoard" class="history-grid"></div>
+        <div class="history-form">
+          <label>직원<select id="historyStaff"></select></label>
+          <label>포지션<select id="historyRole"><option value="backbar">빽바</option><option value="packing">포장</option></select></label>
+          <label>마지막 수행일<input type="date" id="historyDate" value="2026-10-18" /></label>
+          <label>시간대<select id="historyPeriod"><option value="am">오전</option><option value="pm">오후</option></select></label>
+          <button id="historySaveBtn" type="button" class="btn btn-primary">이력 추가</button>
+        </div>
+        <p class="history-note">‘기록 없음’은 한 번도 하지 않았다는 뜻이 아니라 <strong>현재 입력된 이력으로 확인할 수 없다는 뜻</strong>입니다. 같은 날짜라면 오전 기록을 오후 기록보다 오래된 것으로 계산합니다.</p>
+      </section>
 
-      <footer class="page-footer"><p>DIMDIM POSITION · 로컬 초안</p><p>현재 입력 데이터: 2026.10.20~25 근무 사진 / 10.19~21 포지션 텍스트</p></footer>
+      <footer class="page-footer">
+        <p>DIMDIM POSITION · 로컬 초안</p>
+        <p>현재 입력 데이터: 2026.10.20~25 근무 사진 / 10.19~21 포지션 텍스트</p>
+      </footer>
     </main>
 
     <div id="sheetBackdrop" class="sheet-backdrop" hidden></div>
     <aside id="bottomSheet" class="bottom-sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
-      <div class="sheet-head"><div><p class="eyebrow" id="sheetEyebrow">포지션 선택</p><h2 id="sheetTitle">직원 배치</h2></div><button id="sheetClose" class="icon-btn" type="button" aria-label="닫기">×</button></div>
+      <div class="sheet-head">
+        <div>
+          <p class="eyebrow" id="sheetEyebrow">포지션 선택</p>
+          <h2 id="sheetTitle">직원 배치</h2>
+        </div>
+        <button id="sheetClose" class="icon-btn" type="button" aria-label="닫기">×</button>
+      </div>
       <div id="sheetContent" class="sheet-content"></div>
     </aside>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
