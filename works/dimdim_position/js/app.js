@@ -1,16 +1,17 @@
 "use strict";
 
-/* 딤딤섬 포지션 - 2026.10.20~25 근무표 수기 전사 초안.
+/* 딤딤섬 포지션 - 2026.10.26~11.01 근무표 수기 전사 초안.
    사진과 다르면 '시간대별 근무표 > 근무표 편집'에서 수정하십시오.
    데이터는 외부로 전송되지 않으며 사용 중인 브라우저 localStorage에 저장됩니다. */
 
 const DAYS = [
-  { date:"2026-10-20", label:"20일", weekday:"화", target:[2,3,6,9,9,6,5,9,9,8,8,5,1], off:["석보라","한여진","정연우"], leave:[] },
-  { date:"2026-10-21", label:"21일", weekday:"수", target:[2,3,6,9,9,6,5,9,9,8,8,5,1], off:["이승민","황지아보","한여진"], leave:[], note:"근무변경: 권주성 → 김명섭" },
-  { date:"2026-10-22", label:"22일", weekday:"목", target:[2,3,7,9,10,7,6,8,9,8,8,5,1], off:["이승민","김영진","한여진"], leave:[] },
-  { date:"2026-10-23", label:"23일", weekday:"금", target:[2,3,7,9,10,7,8,8,10,9,9,8,1], off:["석보라","정연우","한여진"], leave:["김현우"] },
-  { date:"2026-10-24", label:"24일", weekday:"토", target:[2,4,8,10,11,8,8,10,11,10,10,8,1], off:["김현우","황지아보","김영진","김단영","한여진"], leave:[] },
-  { date:"2026-10-25", label:"25일", weekday:"일", target:[2,4,7,10,11,7,7,10,10,9,9,6,1], off:["김희준"], leave:["석보라"] }
+  { date: "2026-10-26", label: "26일", weekday: "월", target: [2,3,7,9,10,6,6,10,10,9,9,5,1], off: ["김희준","석보라"], leave: [] },
+  { date: "2026-10-27", label: "27일", weekday: "화", target: [2,3,7,9,10,7,6,9,9,8,8,5,1], off: ["이승민","석보라"], leave: ["김현우"] },
+  { date: "2026-10-28", label: "28일", weekday: "수", target: [2,3,7,9,10,7,6,9,10,9,9,6,1], off: ["김현우","황지아보","김영진"], leave: [] },
+  { date: "2026-10-29", label: "29일", weekday: "목", target: [2,3,7,9,10,6,6,9,10,9,9,5,1], off: ["권주성","한여진"], leave: [] },
+  { date: "2026-10-30", label: "30일", weekday: "금", target: [2,3,8,9,10,7,7,9,10,9,9,6,1], off: ["이승민","김단영","정연우","한여진"], leave: [] },
+  { date: "2026-10-31", label: "31일", weekday: "토", target: [2,4,9,11,12,9,9,12,12,11,11,9,1], off: ["김현우","김영진","김단영","정연우"], leave: [] },
+  { date: "2026-11-01", label: "1일", weekday: "일", target: [2,4,8,11,12,9,8,11,11,10,10,8,1], off: ["김희준","황지아보","권주성"], leave: [] }
 ];
 const TIMES = ["9:30-10","10-11","11-12","12-13","13-14","14-15","15-16","16-17","17-18","18-19","19-20","20-21","21-22"];
 const PERIODS = { am:{name:"오전", start:0,end:6}, pm:{name:"오후", start:7,end:12} };
@@ -22,14 +23,16 @@ const ROLES = [
   {id:"packing",name:"포장",symbol:"▱"}
 ];
 const PEAK_COUNTER_CAUTION = new Set(["김영진","황지아보"]);
-const STORAGE_KEY="dimdim-position-prototype-v1";
+const STORAGE_KEY="dimdim-position-week-2026-10-26";
+const PREVIOUS_STORAGE_KEYS=["dimdim-position-prototype-v1"];
 const SCHEDULE_IMAGES={
-  "2026-10-20":"images/schedules/2026-10-20.png",
-  "2026-10-21":"images/schedules/2026-10-21.png",
-  "2026-10-22":"images/schedules/2026-10-22.png",
-  "2026-10-23":"images/schedules/2026-10-23.png",
-  "2026-10-24":"images/schedules/2026-10-24.png",
-  "2026-10-25":"images/schedules/2026-10-25.png"
+  "2026-10-26":"images/schedules/2026-10-26.png",
+  "2026-10-27":"images/schedules/2026-10-27.png",
+  "2026-10-28":"images/schedules/2026-10-28.png",
+  "2026-10-29":"images/schedules/2026-10-29.png",
+  "2026-10-30":"images/schedules/2026-10-30.png",
+  "2026-10-31":"images/schedules/2026-10-31.png",
+  "2026-11-01":"images/schedules/2026-11-01.png"
 };
 
 function range(pattern) {
@@ -62,41 +65,48 @@ function makeDay(regular,part,colors={}) {
 }
 
 /* 원본 표의 '사람이 들어간 칸'을 수기로 옮겼습니다. 파란 빈칸 = 식사 시간으로 등록한 경우만 break. */
+/* 사진의 가로축을 0~12시간칸으로 전사. 노란색 half는 해당 시간 후반 30분 근무. */
 const BASE_ROSTERS={
- "2026-10-20":makeDay(
-  {"이승민":"0-4,6-8","김현우":"3-5,7-12","김희준":"3-5,7-11","황지아보":"2-4,6-10","김영진":"2-4,6-10","권주성":"2-5,7-10"},
-  {"정천빈":"0-6","변지웅":"1-6","김두빈":"7-11","박수연":"7-11","김명섭":"3-5,7-11"},
-  {break:{"이승민":"5","김현우":"6","김희준":"6","황지아보":"5","김영진":"5","권주성":"6","김명섭":"6"},half:{"김영진":"2","변지웅":"1"}}
+ "2026-10-26":makeDay(
+  {"이승민":"0-4,6-8","김현우":"3-5,7-11","김영진":"4-5,7-12","황지아보":"2-4,6-10","김단영":"2-4,6-10","권주성":"2-4,6-10","정연우":"2-5,7-10","한여진":"3-5,7-11"},
+  {"김명섭":"0-6","변지웅":"1-6","최주은":"7-11","히라이":"7-11"},
+  {break:{"이승민":"5","김현우":"6","김영진":"6","황지아보":"5","김단영":"5","권주성":"5","정연우":"6","한여진":"6"},half:{"정연우":"2","변지웅":"1"}}
  ),
- "2026-10-21":makeDay(
-  {"김현우":"3-5,7-11","김희준":"2-4,6-10","석보라":"3-5,7-12","김영진":"0-4,6-8","김단영":"3-5,7-11","김명섭":"2-4,6-10","정연우":"2-5,7-10"},
-  {"변지웅":"0-6","이승우":"1-6","김두빈":"7-11","박수연":"7-11"},
-  {break:{"김현우":"6","김희준":"5","석보라":"6","김영진":"5","김단영":"6","김명섭":"5","정연우":"6"},half:{"정연우":"2","이승우":"1"},extend60:{"석보라":"3"}}
+ "2026-10-27":makeDay(
+  {"김희준":"2-4,6-10","황지아보":"4-5,7-12","김영진":"0-5,7-8","김단영":"3-5,7-11","권주성":"3-5,7-11","정연우":"2-4,6-10","한여진":"2-4,6-10"},
+  {"최희재":"0-6","이승우":"1-6","변지웅":"2-6","박수연":"7-11","김명섭":"7-11"},
+  {break:{"김희준":"5","황지아보":"6","김영진":"6","김단영":"6","권주성":"6","정연우":"5","한여진":"5"},half:{"김희준":"2","이승우":"1"}}
  ),
- "2026-10-22":makeDay(
-  {"김현우":"0-4,6-8","김희준":"4-5,7-12","석보라":"2-5,7-10","황지아보":"3-5,7-11","김단영":"3-5,7-11","권주성":"2-4,6-10","정연우":"2-4,6-10"},
-  {"이승우":"0-6","양유열":"1-6","변지웅":"2-6","김명섭":"7-11","채민우":"8-11"},
-  {break:{"김현우":"5","김희준":"6","석보라":"6","황지아보":"6","김단영":"6","권주성":"5","정연우":"5"},half:{"양유열":"1","정연우":"3","채민우":"8"}}
+ "2026-10-28":makeDay(
+  {"이승민":"4-5,7-12","김희준":"2-4,6-10","석보라":"0-4,6-8","김단영":"2-5,7-10","권주성":"3-5,7-11","정연우":"3-5,7-11","한여진":"2-4,6-10"},
+  {"김명섭":"0-6","이승우":"1-6","변지웅":"2-6","채민우":"7-11","박연주":"7-11","권예준":"8-11"},
+  {break:{"이승민":"6","김희준":"5","석보라":"5","김단영":"6","권주성":"6","정연우":"6","한여진":"5"},half:{"김단영":"2","이승우":"1"}}
  ),
- "2026-10-23":makeDay(
-  {"이승민":"4-5,7-12","김희준":"2-4,6-10","김영진":"3-5,7-11","황지아보":"0-4,6-8","김단영":"3-4,6-11"},
-  {"김두빈":"0-6","김명섭":"1-6","주혜민":"2-6","양유열":"2-6","박연주":"2-6","조원우":"7-11","박수연":"7-11","김선영":"7-11","최주은":"8-11","채민우":"8-11"},
-  {break:{"이승민":"6","김희준":"5","김영진":"6","황지아보":"5","김단영":"5"},half:{"김명섭":"1","채민우":"8"}}
+ "2026-10-29":makeDay(
+  {"이승민":"2-4,6-10","김현우":"3-5,7-11","김희준":"0-4,6-8","석보라":"2-5,7-10","황지아보":"2-4,6-10","김영진":"4-5,7-12","김단영":"2-4,6-10","정연우":"3-5,7-11"},
+  {"김두빈":"0-6","김민지":"1-6","박수연":"7-11","채민우":"8-11"},
+  {break:{"이승민":"5","김현우":"6","김희준":"5","석보라":"6","황지아보":"5","김영진":"6","김단영":"5","정연우":"6"},half:{"석보라":"2","김민지":"1","채민우":"8"}}
  ),
- "2026-10-24":makeDay(
-  {"이승민":"2-4,6-10","김희준":"0-4,6-8","석보라":"4-5,7-12","권주성":"3-5,7-11","정연우":"2-4,6-10"},
-  {"김두빈":"0-6","채민우":"1-6","김선영":"1-6","박연주":"2-6","장승원":"2-6","주혜민":"3-5,7-11","김민지":"7-11","권예준":"7-11","조원우":"7-11","최주은":"7-11","최희재":"8-11"},
-  {break:{"이승민":"5","김희준":"5","석보라":"6","권주성":"6","정연우":"5","주혜민":"6"},half:{"채민우":"1","김선영":"1"}}
+ "2026-10-30":makeDay(
+  {"김현우":"0-4,6-8","김희준":"2-4,6-10","석보라":"3-5,7-11","황지아보":"4-5,7-12","김영진":"2-5,7-10","권주성":"2-4,6-10"},
+  {"조원우":"0-6","양유열":"1-6","주혜민":"2-6","김명섭":"2-6","권예준":"7-11","김선영":"7-11","박수연":"7-11","최주은":"8-11"},
+  {break:{"김현우":"5","김희준":"5","석보라":"6","황지아보":"6","김영진":"6","권주성":"5"},half:{"김영진":"2","양유열":"1"}}
  ),
- "2026-10-25":makeDay(
-  {"이승민":"2-4,6-10","김현우":"4-5,7-12","황지아보":"3-5,7-11","김영진":"0-4,6-8","김단영":"3-5,7-11","정연우":"3-5,7-11","한여진":"2-4,6-10"},
-  {"김두빈":"0-6","박연주":"1-6","히라이":"1-6","김민지":"2-4,6-10","조원우":"7-11","권예준":"7-11"},
-  {break:{"이승민":"5","김현우":"6","황지아보":"6","김영진":"5","김단영":"6","정연우":"6","한여진":"5","김민지":"5"},half:{"한여진":"2","박연주":"1","히라이":"1"}}
+ "2026-10-31":makeDay(
+  {"이승민":"3-5,7-11","김희준":"0-4,6-8","석보라":"4-5,7-12","황지아보":"2-4,6-10","권주성":"3-5,7-11","한여진":"2-4,6-10"},
+  {"김선영":"0-6","박연주":"1-6","채민우":"1-6","장승원":"2-6","신승훈":"2-6","박수연":"2-6","주혜민":"7-11","최주은":"7-11","최희재":"7-11","조원우":"7-11","김두빈":"7-11","김민지":"7-11"},
+  {break:{"이승민":"6","김희준":"5","석보라":"6","황지아보":"5","권주성":"6","한여진":"5"},half:{"박연주":"1","채민우":"1"}}
+ ),
+ "2026-11-01":makeDay(
+  {"이승민":"2-4,6-10","김현우":"4-5,7-12","석보라":"3-5,7-11","김영진":"0-4,6-8","김단영":"3-5,7-11","정연우":"3-5,7-11","한여진":"2-4,6-10"},
+  {"김두빈":"0-6","김선영":"1-6","이승우":"1-6","신승훈":"2-6","히라이":"2-6","권예준":"7-11","조원우":"7-11","주혜민":"7-11","김민지":"7-11"},
+  {break:{"이승민":"5","김현우":"6","석보라":"6","김영진":"5","김단영":"6","정연우":"6","한여진":"5"},half:{"한여진":"2","김선영":"1","이승우":"1"}}
  )
 };
 
 /* 실제 작성한 포지션 세 건을 입력했습니다. '근무변경 권주성 → 김명섭' 포함. */
-const BASE_PLANS={
+const BASE_PLANS = {};
+const LAST_WEEK_BASE_PLANS={
  "2026-10-20":{
   am:{counter:["이승민"],backbar:["변지웅"],deli:["황지아보","권주성"],clean:["김현우","김희준","김명섭","김영진"],packing:["정천빈"]},
   pm:{counter:["김현우"],backbar:["김두빈"],deli:["이승민","김희준","김명섭"],clean:["황지아보","권주성","박수연"],packing:["김영진"]}
@@ -110,23 +120,46 @@ const HISTORY_19={am:{counter:["석보라"],backbar:["김단영"],deli:["황지�
 
 function deepCopy(item){return JSON.parse(JSON.stringify(item));}
 function emptyPlans(){return Object.fromEntries(DAYS.map(d=>[d.date,{am:Object.fromEntries(ROLES.map(r=>[r.id,[]])),pm:Object.fromEntries(ROLES.map(r=>[r.id,[]]))}]));}
-function initialState(){const plans=emptyPlans();for(const [day,data] of Object.entries(BASE_PLANS))plans[day]=deepCopy(data);return {rosters:deepCopy(BASE_ROSTERS),plans,manualHistory:[]};}
+function historicalEventsFromPlans(plans){
+  const events=[];
+  for(const [date,periods] of Object.entries(plans||{})){
+    if(date >= DAYS[0].date)continue;
+    for(const period of ["am","pm"]){
+      for(const role of ["backbar","packing"]){
+        const people=periods?.[period]?.[role];
+        if(!Array.isArray(people))continue;
+        for(const name of people){if(typeof name==="string"&&name.trim())events.push({date,period,role,name,source:"position"});}
+      }
+    }
+  }
+  return events;
+}
+function migratedHistory(){
+  let former=null;
+  try{for(const key of PREVIOUS_STORAGE_KEYS){const saved=JSON.parse(localStorage.getItem(key)||"null");if(saved?.plans){former=saved;break;}}}catch(e){}
+  const archive=[...historicalEventsFromPlans(LAST_WEEK_BASE_PLANS),...historicalEventsFromPlans(former?.plans||{})];
+  // Existing manual entries are also preserved, without carrying an old week's roster into the new week.
+  if(Array.isArray(former?.manualHistory)){
+    for(const row of former.manualHistory){
+      if(row&&row.date<DAYS[0].date&&["backbar","packing"].includes(row.role)) archive.push({...row,source:"manual"});
+    }
+  }
+  const keyOf=e=>[e.date,e.period,e.role,e.name].join("|");
+  return [...new Map(archive.map(e=>[keyOf(e),e])).values()];
+}
+function initialState(){return {rosters:deepCopy(BASE_ROSTERS),plans:emptyPlans(),manualHistory:[],archiveHistory:migratedHistory()};}
 function loadState(){
   try{
-    const saved=JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if(saved&&saved.rosters&&saved.plans&&saved.manualHistory){
-      // 기존 버전의 노란색(extend30) 기록은 내용 보존 후 half로 전환.
-      for(const roster of Object.values(saved.rosters)){
-        for(const record of Object.values(roster)){
-          if(Array.isArray(record.slots))record.slots=record.slots.map(status=>status==="extend30"?"half":status);
-        }
-      }
+    const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+    if(saved?.rosters&&saved?.plans&&Array.isArray(saved.manualHistory)){
+      // Only use this week's data in the new key, keep all historic data separately.
+      saved.archiveHistory=Array.isArray(saved.archiveHistory)?saved.archiveHistory:migratedHistory();
       return saved;
     }
-  }catch(e){/* private browsing may block storage */}
+  }catch(e){}
   return initialState();
 }
-let state=loadState(),selectedDay="2026-10-25",selectedPeriod="am",activeView="assign",sheetMode=null,sheetStaff=null,resultBuilt=false;
+let state=loadState(),selectedDay="2026-10-26",selectedPeriod="am",activeView="assign",sheetMode=null,sheetStaff=null,resultBuilt=false;
 function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){toast("저장 공간에 접근할 수 없습니다. 현재 화면에서만 유지됩니다.");}}
 function $(id){return document.getElementById(id);}
 function dayInfo(){return DAYS.find(d=>d.date===selectedDay);}
@@ -163,7 +196,7 @@ function activeRosterNames(){return rosterNames().filter(n=>coverage(n).minutes>
 function getAssignedRole(name){const p=state.plans[selectedDay][selectedPeriod];return ROLES.find(r=>p[r.id].includes(name))?.id||null;}
 function roleName(role){return ROLES.find(r=>r.id===role)?.name||role;}
 function localDay(date){return date.slice(5).replace("-","/");}
-function historyLogs(){const logs=[];function add(day,p,plan){for(const [r,names] of Object.entries(plan)){for(const name of names)logs.push({name,role:r,date:day,period:p,source:"position"});}}for(const p of ["am","pm"])add("2026-10-19",p,HISTORY_19[p]);for(const [day,parts] of Object.entries(state.plans)){for(const p of ["am","pm"])add(day,p,parts[p]);}for(const entry of state.manualHistory)logs.push({...entry,source:"manual"});return logs;}
+function historyLogs(){const logs=[];function add(day,p,plan){for(const [r,names] of Object.entries(plan)){for(const name of names)logs.push({name,role:r,date:day,period:p,source:"position"});}}for(const p of ["am","pm"])add("2026-10-19",p,HISTORY_19[p]);for(const entry of (state.archiveHistory||[])) logs.push(entry);for(const [day,parts] of Object.entries(state.plans)){for(const p of ["am","pm"])add(day,p,parts[p]);}for(const entry of state.manualHistory)logs.push({...entry,source:"manual"});return logs;}
 function eventRank(entry){return entry.date+":"+(entry.period==="am"?"0":"1");}
 function lastDone(name,role){const cutoff=selectedDay+":"+(selectedPeriod==="am"?"0":"1");const arr=historyLogs().filter(x=>x.name===name&&x.role===role&&eventRank(x)<cutoff).sort((a,b)=>eventRank(b).localeCompare(eventRank(a)));return arr[0]||null;}
 function labelLast(log){return log?`${localDay(log.date)} ${log.period==="am"?"오전":"오후"}`:"기록 없음";}
@@ -252,7 +285,7 @@ function renderScheduleVisual(){
   const src=SCHEDULE_IMAGES[selectedDay];
   if(src){
     img.src=src;
-    img.alt=`${dayInfo().label} 원본 스케줄 사진`;
+    img.alt=`${Number(selectedDay.slice(5,7))}월 ${dayInfo().label} 원본 스케줄 사진`;
     img.hidden=false;
     label.textContent=`${dayInfo().label} 원본`;
   }else{
@@ -338,7 +371,7 @@ function drawRole(ctx,role,idx){
 function exportPageOne(){
   const c=document.createElement("canvas");c.width=EXPORT_W;c.height=EXPORT_H;const ctx=c.getContext("2d");
   const info=dayInfo();
-  drawHeader(ctx,"딤딤섬 포지션",`2026년 10월 ${Number(selectedDay.slice(-2))}일 ${info.weekday}요일 · 오전 / 오후 배치`,1);
+  drawHeader(ctx,"딤딤섬 포지션",`2026년 ${Number(selectedDay.slice(5,7))}월 ${Number(selectedDay.slice(-2))}일 ${info.weekday}요일 · 오전 / 오후 배치`,1);
   const a=assignedCount("am"),b=assignedCount("pm");
   drawRound(ctx,70,355,1030,156,26,"#fff","#e2ebeb");
   exportText(ctx,"오전 배치 완료",111,383,29,"#65838a",600);exportText(ctx,`${a}명`,111,426,51,"#087f6b",800);
@@ -361,7 +394,7 @@ function drawNoteLine(ctx,label,body,y){
 async function exportPageTwo(){
   const c=document.createElement("canvas");c.width=EXPORT_W;c.height=EXPORT_H;const ctx=c.getContext("2d");
   const info=dayInfo();
-  drawHeader(ctx,"근무표 · 현장 메모",`10월 ${Number(selectedDay.slice(-2))}일 ${info.weekday}요일 · 원본 스케줄`,2);
+  drawHeader(ctx,"근무표 · 현장 메모",`${Number(selectedDay.slice(5,7))}월 ${Number(selectedDay.slice(-2))}일 ${info.weekday}요일 · 원본 스케줄`,2);
   drawRound(ctx,70,370,1030,1110,28,"#ffffff","#dde9e8");
   exportText(ctx,"원본 스케줄",104,410,42,"#173e47",800);
   exportText(ctx,"사진 비율을 유지해 삽입했습니다",106,466,27,"#7a9299",500);
@@ -427,7 +460,7 @@ function showStaff(name){sheetMode="staff";sheetStaff=name;const cov=coverage(na
 function showSuggestions(role){sheetMode="recommend";const list=candidates(role);const markup=`<p class="sheet-explain">${role==="backbar"||role==="packing"?"마지막 담당일이 오래된 직원 우선, 같은 날이면 오전 기록 우선입니다. 기록 미입력 직원은 ‘기록 없음’으로 표시하고 뒤에 배치합니다.":"해당 시간대의 근무 가능 시간이 긴 직원부터 보여줍니다."} 금·토·일 카운터 주의 직원은 후순위입니다.</p><div class="suggested-list">${list.length?list.map((x,i)=>`<button type="button" class="sheet-role" data-assign-person="${x.name}"><span><strong><span class="rank">${i+1}</span> ${x.name}</strong><small>${candidateWhy(x,role)}</small></span><span class="arrow">＋</span></button>`).join(""):`<div class="muted-empty">추천할 미배치 직원이 없습니다.</div>`}</div>`;openSheet(`${roleName(role)} 추천 순서`,"포지션 선택 → 직원 배치",markup);document.querySelectorAll("[data-assign-person]").forEach(el=>el.addEventListener("click",()=>assign(el.dataset.assignPerson,role)));}
 function assign(name,role){if(role==="counter"&&state.rosters[selectedDay]?.[name]?.type!=="정직원"){toast("카운터는 정직원만 배치할 수 있습니다.");return;}const cov=coverage(name);if(cov.minutes===0){toast("해당 시간대에 실제 근무 시간이 없습니다.");return;}if(weekendWarn(name,role)&&!window.confirm(`${name} 직원은 금·토·일 카운터 숙련도 주의 대상입니다. 그래도 배치하시겠습니까?`))return;for(const r of ROLES)state.plans[selectedDay][selectedPeriod][r.id]=state.plans[selectedDay][selectedPeriod][r.id].filter(n=>n!==name);state.plans[selectedDay][selectedPeriod][role].push(name);saveState();closeSheet();renderAll();toast(`${name} → ${roleName(role)} 배치했습니다.`);}
 function removeStaff(name){for(const r of ROLES)state.plans[selectedDay][selectedPeriod][r.id]=state.plans[selectedDay][selectedPeriod][r.id].filter(n=>n!==name);saveState();closeSheet();renderAll();toast(`${name}의 배치를 해제했습니다.`);}
-function outputPosition(){const p=state.plans[selectedDay], lines=[`10월 ${Number(selectedDay.slice(-2))}일 ${dayInfo().weekday}요일 포지션 입니다.`,""];for(const role of ROLES){const am=p.am[role.id].join(", ")||"(미배치)",pm=p.pm[role.id].join(", ")||"(미배치)";lines.push(`${roleName(role.id)} ${am} / ${pm}`);}lines.push("","*근무변경",dayInfo().note||"","☆ 풀근무자 식사시간");for(const [label,slot] of [["2시",5],["3시",6]]){const group=rosterNames().filter(name=>rowStatus(name,slot)==="break");lines.push(`${label} ${group.length?group.join(", "):"(입력 없음)"}`);}lines.push("","※ 사진 판독을 기반으로 만든 초안입니다. 시간·휴게·배치를 현장표와 대조하세요.");return lines.join("\n");}
+function outputPosition(){const p=state.plans[selectedDay], lines=[`${Number(selectedDay.slice(5,7))}월 ${Number(selectedDay.slice(-2))}일 ${dayInfo().weekday}요일 포지션 입니다.`,""];for(const role of ROLES){const am=p.am[role.id].join(", ")||"(미배치)",pm=p.pm[role.id].join(", ")||"(미배치)";lines.push(`${roleName(role.id)} ${am} / ${pm}`);}lines.push("","*근무변경",dayInfo().note||"","☆ 풀근무자 식사시간");for(const [label,slot] of [["2시",5],["3시",6]]){const group=rosterNames().filter(name=>rowStatus(name,slot)==="break");lines.push(`${label} ${group.length?group.join(", "):"(입력 없음)"}`);}lines.push("","※ 사진 판독을 기반으로 만든 초안입니다. 시간·휴게·배치를 현장표와 대조하세요.");return lines.join("\n");}
 async function copyText(){const content=outputPosition();try{await navigator.clipboard.writeText(content);toast("포지션 안내문을 복사했습니다.");}catch(e){const t=document.createElement("textarea");t.value=content;t.style.position="fixed";t.style.top="-9999px";document.body.appendChild(t);t.select();try{const result=document.execCommand("copy");toast(result?"포지션 안내문을 복사했습니다.":"복사 권한이 없어 텍스트를 선택해 주세요.");}catch(_){window.prompt("이 텍스트를 복사하세요.",content);}t.remove();}}
 function showView(view){activeView=view;$("assignView").hidden=view!=="assign";$("scheduleView").hidden=view!=="schedule";$("tabAssign").classList.toggle("active",view==="assign");$("tabSchedule").classList.toggle("active",view==="schedule");}
 
@@ -445,6 +478,6 @@ $("exportBtn").addEventListener("click",copyText);
 $("buildResultBtn").addEventListener("click",buildResult);
 $("downloadJpgBtn").addEventListener("click",downloadJpg);
 $("clearPeriodBtn").addEventListener("click",()=>{if(!window.confirm(`${dayInfo().label} ${PERIODS[selectedPeriod].name} 포지션 배치를 비우시겠습니까?`))return;for(const r of ROLES)state.plans[selectedDay][selectedPeriod][r.id]=[];saveState();renderAll();toast("선택한 시간대의 배치를 비웠습니다.");});
-$("resetBtn").addEventListener("click",()=>{if(!window.confirm("저장된 근무표 수정·배치·추가 이력을 모두 지우고 사진 기반 초안으로 복구하시겠습니까?"))return;state=initialState();saveState();renderAll();toast("초안으로 복구했습니다.");});
+$("resetBtn").addEventListener("click",()=>{if(!window.confirm("저장된 근무표 수정·배치·추가 이력을 모두 지우고 사진 기반 초안으로 복구하시겠습니까?"))return;const archive=state.archiveHistory||migratedHistory();state=initialState();state.archiveHistory=archive;saveState();renderAll();toast("이번 주 배치를 초기화했습니다. 이전 담당 이력은 보존했습니다.");});
 $("historySaveBtn").addEventListener("click",()=>{const name=$("historyStaff").value,role=$("historyRole").value,date=$("historyDate").value,period=$("historyPeriod").value;if(!name||!date){toast("직원과 날짜를 선택하세요.");return;}if(date>selectedDay||(date===selectedDay&&period==="pm"&&selectedPeriod==="am")){toast("현재 선택한 시간대 이전의 기록만 등록해 주세요.");return;}state.manualHistory.push({name,role,date,period});saveState();renderAll();toast(`${name}의 ${roleName(role)} 이력을 추가했습니다.`);});
 renderAll();
