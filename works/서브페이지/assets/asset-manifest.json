@@ -1,0 +1,27 @@
+{
+  "note": "All images are lossless, direct rectangular crops of the supplied mockup (2240x5000). Occluded pixels are not reconstructed.",
+  "source_dimensions": [
+    2240,
+    5000
+  ],
+  "sections": 7,
+  "individual_images": [
+    "card_brazil_brigadeiro.png",
+    "card_chile_milhojas.png",
+    "card_mexico_churros.png",
+    "card_usa_tres_leches.png",
+    "carousel_center_layer_cake.png",
+    "carousel_left_green_roll_visible.png",
+    "carousel_left_macaron_visible.png",
+    "carousel_right_chocolate_visible.png",
+    "carousel_right_floral_visible.png",
+    "dispatch_circle_seasonal_picks_visible.png",
+    "dispatch_circle_travel_notes_visible.png",
+    "dispatch_circle_world_desserts_visible.png",
+    "hero_full.png",
+    "hero_world_map_visible.png",
+    "sweet_dispatch_panel.png",
+    "world_desserts_panel.png",
+    "world_mexico_visible_card.png"
+  ]
+}

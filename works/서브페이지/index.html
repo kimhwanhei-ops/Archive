@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#580919" />
+    <title>Dessert Lab | Global Dessert Heritage Collection</title>
+    <meta
+      name="description"
+      content="첨부된 Dessert Lab 서브페이지 시안의 이미지와 구성을 보존한 인터랙티브 웹페이지입니다."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.6.1.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell" id="top">
+      <section
+        class="visual-panel"
+        id="site-header"
+        aria-label="디저트 랩 상단 내비게이션"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/00_header.png"
+          alt="디저트 랩 상단 내비게이션"
+          draggable="false"
+          loading="eager"
+        />
+        <a
+          class="hitbox"
+          style="
+            --left: 7.36607%;
+            --top: 2.08333%;
+            --width: 17.1875%;
+            --height: 91.66667%;
+          "
+          href="#top"
+          aria-label="상단으로"
+          ><span class="sr-only">상단으로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 34.15179%;
+            --top: 10.41667%;
+            --width: 7.8125%;
+            --height: 76.04167%;
+          "
+          href="#collection"
+          aria-label="디저트 컬렉션으로"
+          ><span class="sr-only">디저트 컬렉션으로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 43.97321%;
+            --top: 10.41667%;
+            --width: 7.45536%;
+            --height: 76.04167%;
+          "
+          href="#gallery"
+          aria-label="아틀리에 갤러리로"
+          ><span class="sr-only">아틀리에 갤러리로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 53.125%;
+            --top: 10.41667%;
+            --width: 9.15179%;
+            --height: 76.04167%;
+          "
+          href="#world"
+          aria-label="브랜드 세계지도 콘텐츠로"
+          ><span class="sr-only">브랜드 세계지도 콘텐츠로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 62.94643%;
+            --top: 10.41667%;
+            --width: 5.58036%;
+            --height: 76.04167%;
+          "
+          href="#collection"
+          aria-label="쇼핑 디저트 컬렉션으로"
+          ><span class="sr-only">쇼핑 디저트 컬렉션으로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 69.64286%;
+            --top: 10.41667%;
+            --width: 7.58929%;
+            --height: 76.04167%;
+          "
+          href="#dispatch"
+          aria-label="비지트 섹션으로"
+          ><span class="sr-only">비지트 섹션으로</span></a
+        >
+      </section>
+      <section
+        class="visual-panel"
+        id="hero"
+        aria-label="The Finest Origins. 세계 디저트 원산지 지도"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/01_hero.png"
+          alt="The Finest Origins. 세계 디저트 원산지 지도"
+          draggable="false"
+          loading="eager"
+        />
+        <a
+          class="hitbox"
+          style="
+            --left: 8.52679%;
+            --top: 75.50059%;
+            --width: 5.75893%;
+            --height: 13.0742%;
+          "
+          href="#collection"
+          aria-label="디저트 컬렉션 보기"
+          ><span class="sr-only">디저트 컬렉션 보기</span></a
+        >
+      </section>
+      <section
+        class="visual-panel"
+        id="collection"
+        aria-label="USA Tres Leches, Mexico Churros, Brazil Brigadeiro, Chile Milhojas와 페이지 번호 1~4"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/02_collection.png"
+          alt="USA Tres Leches, Mexico Churros, Brazil Brigadeiro, Chile Milhojas와 페이지 번호 1~4"
+          draggable="false"
+          loading="lazy"
+        />
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 11.60714%;
+            --top: 19.92908%;
+            --width: 37.63393%;
+            --height: 25.10638%;
+          "
+          data-action="card"
+          data-card="usa"
+          aria-label="USA Tres Leches 상세"
+        >
+          <span class="sr-only">USA Tres Leches 상세</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 50.80357%;
+            --top: 19.92908%;
+            --width: 37.63393%;
+            --height: 25.10638%;
+          "
+          data-action="card"
+          data-card="mexico"
+          aria-label="Mexico Churros 상세"
+        >
+          <span class="sr-only">Mexico Churros 상세</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 11.60714%;
+            --top: 47.23404%;
+            --width: 37.63393%;
+            --height: 25.03546%;
+          "
+          data-action="card"
+          data-card="brazil"
+          aria-label="Brazil Brigadeiro 상세"
+        >
+          <span class="sr-only">Brazil Brigadeiro 상세</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 50.80357%;
+            --top: 47.23404%;
+            --width: 37.63393%;
+            --height: 25.03546%;
+          "
+          data-action="card"
+          data-card="chile"
+          aria-label="Chile Milhojas 상세"
+        >
+          <span class="sr-only">Chile Milhojas 상세</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 36.83036%;
+            --top: 72.55319%;
+            --width: 3.30357%;
+            --height: 6.95035%;
+          "
+          data-action="page-prev"
+          aria-label="이전 페이지"
+        >
+          <span class="sr-only">이전 페이지</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 41.78571%;
+            --top: 72.55319%;
+            --width: 3.48214%;
+            --height: 6.95035%;
+          "
+          data-action="page"
+          data-page="1"
+          aria-label="페이지 1"
+        >
+          <span class="sr-only">페이지 1</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 46.07143%;
+            --top: 72.55319%;
+            --width: 3.03571%;
+            --height: 6.95035%;
+          "
+          data-action="page"
+          data-page="2"
+          aria-label="페이지 2"
+        >
+          <span class="sr-only">페이지 2</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 50.26786%;
+            --top: 72.55319%;
+            --width: 3.125%;
+            --height: 6.95035%;
+          "
+          data-action="page"
+          data-page="3"
+          aria-label="페이지 3"
+        >
+          <span class="sr-only">페이지 3</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 54.33036%;
+            --top: 72.55319%;
+            --width: 3.03571%;
+            --height: 6.95035%;
+          "
+          data-action="page"
+          data-page="4"
+          aria-label="페이지 4"
+        >
+          <span class="sr-only">페이지 4</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 59.375%;
+            --top: 72.55319%;
+            --width: 3.125%;
+            --height: 6.95035%;
+          "
+          data-action="page-next"
+          aria-label="다음 페이지"
+        >
+          <span class="sr-only">다음 페이지</span>
+        </button>
+      </section>
+      <section
+        class="visual-panel"
+        id="world"
+        aria-label="World Desserts 국가별 디저트 지도"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/03_world_desserts.png"
+          alt="World Desserts 국가별 디저트 지도"
+          draggable="false"
+          loading="lazy"
+        />
+        <a
+          class="hitbox"
+          style="
+            --left: 7.36607%;
+            --top: 65.00593%;
+            --width: 18.08036%;
+            --height: 17.67497%;
+          "
+          href="#collection"
+          aria-label="세계 디저트 컬렉션으로 이동"
+          ><span class="sr-only">세계 디저트 컬렉션으로 이동</span></a
+        >
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 30.13393%;
+            --top: 52.31317%;
+            --width: 19.19643%;
+            --height: 26.57177%;
+          "
+          data-action="card"
+          data-card="mexico"
+          aria-label="멕시코 츄러스 상세"
+        >
+          <span class="sr-only">멕시코 츄러스 상세</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 63.03571%;
+            --top: 4.74496%;
+            --width: 4.59821%;
+            --height: 11.26928%;
+          "
+          data-action="country"
+          data-country="캐나다"
+          aria-label="캐나다 표시"
+        >
+          <span class="sr-only">캐나다 표시</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 43.75%;
+            --top: 17.79359%;
+            --width: 4.6875%;
+            --height: 11.26928%;
+          "
+          data-action="country"
+          data-country="미국 (니카라과)"
+          aria-label="USA 표시"
+        >
+          <span class="sr-only">USA 표시</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 82.58929%;
+            --top: 19.57295%;
+            --width: 5.35714%;
+            --height: 11.8624%;
+          "
+          data-action="country"
+          data-country="중국"
+          aria-label="중국 표시"
+        >
+          <span class="sr-only">중국 표시</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 76.33929%;
+            --top: 69.39502%;
+            --width: 6.25%;
+            --height: 15.42112%;
+          "
+          data-action="country"
+          data-country="일본 · 한국"
+          aria-label="일본·한국 표시"
+        >
+          <span class="sr-only">일본·한국 표시</span>
+        </button>
+      </section>
+      <section
+        class="visual-panel"
+        id="gallery"
+        aria-label="레이어 케이크 중심의 디저트 사진 캐러셀"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/04_carousel.png"
+          alt="레이어 케이크 중심의 디저트 사진 캐러셀"
+          draggable="false"
+          loading="lazy"
+        />
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 34.375%;
+            --top: 37.37452%;
+            --width: 32.05357%;
+            --height: 32.27799%;
+          "
+          data-action="layer"
+          aria-label="레이어 케이크 자세히 보기"
+        >
+          <span class="sr-only">레이어 케이크 자세히 보기</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 45.44643%;
+            --top: 88.95753%;
+            --width: 2.76786%;
+            --height: 7.33591%;
+          "
+          data-action="gallery"
+          data-slide="0"
+          aria-label="갤러리 1번"
+        >
+          <span class="sr-only">갤러리 1번</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 48.25893%;
+            --top: 88.95753%;
+            --width: 2.63393%;
+            --height: 7.33591%;
+          "
+          data-action="gallery"
+          data-slide="1"
+          aria-label="갤러리 2번"
+        >
+          <span class="sr-only">갤러리 2번</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 51.02679%;
+            --top: 88.95753%;
+            --width: 2.90179%;
+            --height: 7.33591%;
+          "
+          data-action="gallery"
+          data-slide="2"
+          aria-label="갤러리 3번"
+        >
+          <span class="sr-only">갤러리 3번</span>
+        </button>
+        <button
+          type="button"
+          class="hitbox"
+          style="
+            --left: 53.97321%;
+            --top: 88.95753%;
+            --width: 2.94643%;
+            --height: 7.33591%;
+          "
+          data-action="gallery"
+          data-slide="3"
+          aria-label="갤러리 4번"
+        >
+          <span class="sr-only">갤러리 4번</span>
+        </button>
+      </section>
+      <section
+        class="visual-panel"
+        id="dispatch"
+        aria-label="Sweet Dispatch 세계 디저트 콘텐츠"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/05_sweet_dispatch.png"
+          alt="Sweet Dispatch 세계 디저트 콘텐츠"
+          draggable="false"
+          loading="lazy"
+        />
+        <a
+          class="hitbox"
+          style="
+            --left: 45.53571%;
+            --top: 12.45791%;
+            --width: 11.875%;
+            --height: 77.44108%;
+          "
+          href="#collection"
+          aria-label="월드 디저트로"
+          ><span class="sr-only">월드 디저트로</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 62.05357%;
+            --top: 12.45791%;
+            --width: 12.23214%;
+            --height: 77.44108%;
+          "
+          href="#world"
+          aria-label="트래블 노트"
+          ><span class="sr-only">트래블 노트</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 77.67857%;
+            --top: 12.45791%;
+            --width: 12.72321%;
+            --height: 77.44108%;
+          "
+          href="#gallery"
+          aria-label="시즈널 픽스"
+          ><span class="sr-only">시즈널 픽스</span></a
+        >
+      </section>
+      <section
+        class="visual-panel"
+        id="site-footer"
+        aria-label="Lumière Dessert Lab 페이지 푸터"
+      >
+        <img
+          class="panel-image"
+          src="assets/sections/06_footer.png"
+          alt="Lumière Dessert Lab 페이지 푸터"
+          draggable="false"
+          loading="lazy"
+        />
+        <a
+          class="hitbox"
+          style="
+            --left: 29.82143%;
+            --top: 4.28571%;
+            --width: 8.125%;
+            --height: 48.09524%;
+          "
+          href="#collection"
+          aria-label="푸터 디저트 컬렉션"
+          ><span class="sr-only">푸터 디저트 컬렉션</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 39.73214%;
+            --top: 4.28571%;
+            --width: 6.25%;
+            --height: 48.09524%;
+          "
+          href="#gallery"
+          aria-label="푸터 아틀리에"
+          ><span class="sr-only">푸터 아틀리에</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 48.4375%;
+            --top: 4.28571%;
+            --width: 6.25%;
+            --height: 48.09524%;
+          "
+          href="#world"
+          aria-label="푸터 브랜드"
+          ><span class="sr-only">푸터 브랜드</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 58.03571%;
+            --top: 4.28571%;
+            --width: 6.69643%;
+            --height: 48.09524%;
+          "
+          href="#collection"
+          aria-label="푸터 쇼핑"
+          ><span class="sr-only">푸터 쇼핑</span></a
+        >
+        <a
+          class="hitbox"
+          style="
+            --left: 65.625%;
+            --top: 4.28571%;
+            --width: 8.25893%;
+            --height: 48.09524%;
+          "
+          href="#dispatch"
+          aria-label="푸터 뉴스레터"
+          ><span class="sr-only">푸터 뉴스레터</span></a
+        >
+      </section>
+    </div>
+
+    <!-- The dialog is hidden until a visitor opens one of the original cards. -->
+    <div class="detail-layer" id="detailLayer" hidden>
+      <div class="detail-backdrop" data-close-modal></div>
+      <section
+        class="detail-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detailTitle"
+        tabindex="-1"
+      >
+        <button
+          class="close-detail"
+          type="button"
+          data-close-modal
+          aria-label="상세 보기 닫기"
+        >
+          ×
+        </button>
+        <h2 id="detailTitle" class="sr-only"></h2>
+        <img class="detail-photo" id="detailPhoto" alt="" />
+      </section>
+    </div>
+    <div
+      class="feedback"
+      role="status"
+      aria-live="polite"
+      id="feedback"
+      hidden
+    ></div>
+  </body>
+</html>

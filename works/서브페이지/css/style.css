@@ -1,0 +1,163 @@
+/*
+  Dessert Lab reference-preserving subpage.
+  All visible artwork is cropped directly from the supplied 2240 × 5000 mockup.
+  Do not place another copy of the same heading, photo, or icon over the panels.
+  Interactive hitboxes have no visible rest-state styling by design.
+*/
+:root {
+  color-scheme: light;
+  --burgundy: #580c21;
+  --cream: #fff2e8;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+.page-shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: clip;
+}
+.visual-panel {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+.panel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+.hitbox {
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10px;
+  outline-offset: 3px;
+}
+.hitbox:focus-visible {
+  outline: 3px solid #9e4257;
+  background: rgba(255, 255, 255, 0.09);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+[hidden] {
+  display: none !important;
+}
+.detail-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.detail-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 12, 22, 0.76);
+  cursor: pointer;
+}
+.detail-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(850px, 96vw);
+  background: #fff7ee;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.26);
+  outline: none;
+}
+.detail-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.close-detail {
+  position: absolute;
+  z-index: 2;
+  right: 8px;
+  top: -48px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(56, 10, 22, 0.7);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.feedback {
+  position: fixed;
+  z-index: 1100;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  max-width: min(92vw, 440px);
+  background: #531427;
+  color: white;
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+  padding: 12px 17px;
+  border-radius: 12px;
+  box-shadow: 0 7px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+body.modal-open {
+  overflow: hidden;
+}
+@media (max-width: 650px) {
+  .detail-layer {
+    padding: 14px;
+  }
+  .detail-dialog {
+    padding: 7px;
+    border-radius: 12px;
+  }
+  .close-detail {
+    top: -44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
